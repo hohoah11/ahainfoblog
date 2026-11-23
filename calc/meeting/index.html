@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>회의 비용 계산기 - 연봉으로 회의 인건비 추정 | 아하서식</title>
+<meta name="description" content="참석 인원, 평균 연봉, 회의 시간, 주간 횟수를 넣으면 회의 1회 비용과 연간 비용을 바로 계산합니다. 계산 방식, 예시, 회의 줄이는 법을 함께 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/meeting/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="회의 비용 계산기 - 연봉으로 회의 인건비 추정 | 아하서식">
+<meta property="og:description" content="참석 인원, 평균 연봉, 회의 시간, 주간 횟수를 넣으면 회의 1회 비용과 연간 비용을 바로 계산합니다. 계산 방식, 예시, 회의 줄이는 법을 함께 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/meeting/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "회의 비용 계산기, 회의 한 번에 드는 인건비", "description": "참석 인원, 평균 연봉, 회의 시간, 주간 횟수를 넣으면 회의 1회 비용과 연간 비용을 바로 계산합니다. 계산 방식, 예시, 회의 줄이는 법을 함께 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/meeting/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "평균 연봉에는 상여금도 넣어야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "정해진 기준은 없습니다. 매년 고정으로 받는 상여가 있다면 넣는 쪽이 실제에 가깝습니다. 그보다 팀 안에서 같은 기준으로 비교하는 것이 더 중요합니다."}}, {"@type": "Question", "name": "참석자마다 연봉이 다른데 평균만 넣어도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "됩니다. 회의 비용은 참석자 각자의 시간당 인건비를 더한 값이므로, 평균에 인원을 곱해도 결과가 같습니다. 정확히 하려면 참석자 연봉을 모두 더해 인원으로 나눈 값을 넣으세요."}}, {"@type": "Question", "name": "연간 비용은 왜 52주로 계산하나요?", "acceptedAnswer": {"@type": "Answer", "text": "1년이 약 52주이기 때문입니다. 휴가나 공휴일로 쉬는 주를 빼면 실제 횟수는 이보다 조금 적습니다. 쉬는 주가 많은 회의라면 결과를 그만큼 낮춰 보세요."}}, {"@type": "Question", "name": "입력한 연봉 정보가 어디에 남나요?", "acceptedAnswer": {"@type": "Answer", "text": "입력값은 서버로 전송되지 않고 이 화면에서만 계산됩니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 회의 비용 계산기</div></div>
+  <h1>회의 비용 계산기, 회의 한 번에 드는 인건비</h1>
+  <p class="lead">참석 인원과 평균 연봉, 회의 시간과 주간 횟수를 넣으면 회의 1회 비용부터 연간 비용까지 바로 보여 줍니다. 정기 회의를 손볼지 판단할 때 근거 숫자로 쓰세요. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>이 계산기로 알 수 있는 것</h2>
+<p>회의에는 청구서가 따로 오지 않습니다. 그래서 일주일에 몇 번, 몇 명이 모이는지 따져 보는 일이 드뭅니다. 하지만 참석자는 회의하는 동안에도 급여를 받습니다. 이 계산기는 그 급여 중 회의에 쓰인 몫을 원 단위로 보여 줍니다.</p>
+<p>입력은 참석 인원, 참석자 평균 연봉, 회의 시간(분), 주간 회의 횟수의 네 가지입니다. 결과로는 1인 시간당 인건비(추정), 회의 1회 비용, 주간 비용, 연간 비용(52주 기준)이 나옵니다. 값을 바꾸면 결과가 바로 다시 계산됩니다. 처음이라면 '예시 값 넣기'를 눌러 화면 구성을 먼저 확인해 보세요.</p>
+
+<h2>시간당 인건비를 잡는 방식</h2>
+<p>계산은 참석자 한 사람의 시간당 인건비에서 시작합니다. 연봉을 12로 나눠 월급을 구하고, 이를 다시 209시간으로 나눕니다.</p>
+<table>
+<tr><th>단계</th><th>계산</th><th>뜻</th></tr>
+<tr><td>1인 시간당 인건비</td><td>평균 연봉 ÷ 12 ÷ 209</td><td>월급을 한 달 유급 시간으로 나눈 값</td></tr>
+<tr><td>회의 1회 비용</td><td>시간당 인건비 × 인원 × (회의 분 ÷ 60)</td><td>한 번 모일 때 쓰이는 급여</td></tr>
+<tr><td>주간 비용</td><td>회의 1회 비용 × 주간 횟수</td><td>한 주 동안의 합계</td></tr>
+<tr><td>연간 비용</td><td>주간 비용 × 52</td><td>1년을 52주로 본 합계</td></tr>
+</table>
+<p>209시간은 주 40시간 근무에 주휴 8시간을 더한 48시간을 월 단위로 바꾼 값입니다. 48 × 365 ÷ 7 ÷ 12를 계산하면 약 208.6이 나오고, 이를 반올림해 209를 씁니다. 최저임금 월 환산액도 같은 기준으로 구합니다.</p>
+
+<h2>세 가지 회의로 계산해 본 예시</h2>
+<p>검산하기 쉽도록 시간당 인건비가 딱 떨어지는 연봉을 골랐습니다. 예를 들어 연봉 50,160,000원을 12로 나누면 4,180,000원이고, 이를 209로 나누면 20,000원입니다.</p>
+<table>
+<tr><th>구분</th><th>팀 주간 회의</th><th>아침 스탠드업</th><th>임원 실적 점검</th></tr>
+<tr><td>참석 인원</td><td>7명</td><td>5명</td><td>4명</td></tr>
+<tr><td>평균 연봉</td><td>50,160,000원</td><td>37,620,000원</td><td>62,700,000원</td></tr>
+<tr><td>시간당 인건비</td><td>20,000원</td><td>15,000원</td><td>25,000원</td></tr>
+<tr><td>회의 시간 / 주간 횟수</td><td>60분 / 2회</td><td>15분 / 5회</td><td>90분 / 1회</td></tr>
+<tr><td>회의 1회 비용</td><td>140,000원</td><td>18,750원</td><td>150,000원</td></tr>
+<tr><td>주간 비용</td><td>280,000원</td><td>93,750원</td><td>150,000원</td></tr>
+<tr><td>연간 비용</td><td>14,560,000원</td><td>4,875,000원</td><td>7,800,000원</td></tr>
+</table>
+<p>스탠드업은 한 번에 2만원도 들지 않지만, 매일 열리면 1년에 480만원을 넘습니다. 짧은 회의라도 자주 열리면 비용이 쌓입니다. 반대로 임원 회의는 한 번에 15만원으로 가장 비싸지만, 주 1회라 연간 합계는 팀 회의보다 적습니다.</p>
+
+<h2>시간과 인원을 줄이면 얼마나 달라지나</h2>
+<p>위 팀 주간 회의를 60분에서 45분으로 줄이고, 매번 듣기만 하던 2명을 빼 5명으로 열었다고 해 보겠습니다.</p>
+<table>
+<tr><th>구분</th><th>변경 전</th><th>변경 후</th></tr>
+<tr><td>인원 × 시간</td><td>7명 × 60분</td><td>5명 × 45분</td></tr>
+<tr><td>회의 1회 비용</td><td>140,000원</td><td>75,000원</td></tr>
+<tr><td>연간 비용(주 2회)</td><td>14,560,000원</td><td>7,800,000원</td></tr>
+</table>
+<p>연간 6,760,000원이 줄어듭니다. 비용은 인원과 시간에 정비례하므로 한쪽만 줄여도 효과가 있고, 둘을 함께 줄이면 줄어든 비율이 곱해져 효과가 커집니다. 회의를 줄일 때 흔히 쓰는 방법은 다음과 같습니다.</p>
+<ul>
+<li><b>안건이 없으면 열지 않기.</b> 전날까지 안건이 올라오지 않은 정기 회의는 취소합니다.</li>
+<li><b>안건별로 필요한 사람만 부르기.</b> 결과만 알면 되는 사람에게는 회의록을 보냅니다.</li>
+<li><b>기본 시간을 짧게 잡기.</b> 일정표의 기본값을 60분 대신 30분이나 45분으로 바꿉니다.</li>
+<li><b>보고는 문서로 대신하기.</b> 수치는 미리 공유하고, 회의는 결정할 일에만 씁니다.</li>
+</ul>
+
+<h2>결과를 읽을 때 감안할 점</h2>
+<div class="note"><b>실제 비용은 대체로 이 결과보다 큽니다.</b> 이 계산기는 연봉만으로 추정하며, 회사가 따로 내는 4대보험 부담분은 넣지 않았습니다. 2026년 기준 사업주 부담률은 국민연금 4.75%, 건강보험 3.595%, 고용보험(실업급여) 0.9%입니다. 여기에 장기요양보험, 고용안정·직업능력개발사업 보험료, 업종별 산재보험료가 더 붙습니다. 퇴직금 적립분도 빠져 있습니다.</div>
+<p>회의 준비, 회의실 이동, 회의를 마치고 다시 업무에 집중하기까지 걸리는 시간도 계산에 들어가 있지 않습니다. 또 209시간에는 일하지 않는 주휴시간이 포함돼 있어, 실제 근무 1시간당 인건비는 결과보다 조금 높습니다. 그러므로 화면의 숫자는 최소한의 추정치로 보면 됩니다. 직급별 연봉이나 개인 급여를 정확히 반영하는 계산이 아니므로, 팀원에게 공유할 때는 평균 연봉을 대략적인 값으로 넣는 편이 좋습니다.</p>
+
+<h2>안건지·회의록과 함께 쓰는 방법</h2>
+<p>회의 방식을 바꾸자고 제안할 때 비용 숫자는 좋은 근거가 됩니다. 정기 회의 개편을 건의한다면 계산 결과를 인쇄해 첨부하세요. 회의 전에는 <a href="/forms/meetingagenda/">회의 안건지</a>에 안건별 예상 시간과 참석 대상을 적어 두면, 꼭 필요하지 않은 참석자가 자연스럽게 드러납니다. 회의가 끝나면 <a href="/forms/minutes/">회의록</a>에 결정 사항과 담당자를 남기세요. 불참자가 회의록만 읽고도 내용을 따라올 수 있어야 다음 회의 인원을 줄일 수 있습니다.</p>
+
+<h2>자주 묻는 질문</h2>
+<h3>평균 연봉에는 상여금도 넣어야 하나요?</h3>
+<p>정해진 기준은 없습니다. 매년 고정으로 받는 상여가 있다면 넣는 쪽이 실제에 가깝습니다. 그보다 팀 안에서 같은 기준으로 비교하는 것이 더 중요합니다.</p>
+<h3>참석자마다 연봉이 다른데 평균만 넣어도 되나요?</h3>
+<p>됩니다. 회의 비용은 참석자 각자의 시간당 인건비를 더한 값이므로, 평균에 인원을 곱해도 결과가 같습니다. 정확히 하려면 참석자 연봉을 모두 더해 인원으로 나눈 값을 넣으세요.</p>
+<h3>연간 비용은 왜 52주로 계산하나요?</h3>
+<p>1년이 약 52주이기 때문입니다. 휴가나 공휴일로 쉬는 주를 빼면 실제 횟수는 이보다 조금 적습니다. 쉬는 주가 많은 회의라면 결과를 그만큼 낮춰 보세요.</p>
+<h3>입력한 연봉 정보가 어디에 남나요?</h3>
+<p>입력값은 서버로 전송되지 않고 이 화면에서만 계산됩니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.law.go.kr/법령/근로기준법" rel="nofollow noopener" target="_blank">근로기준법 (국가법령정보센터)</a> - 법정 근로시간, 주휴일</li>
+<li><a href="https://www.moel.go.kr" rel="nofollow noopener" target="_blank">고용노동부</a> - 최저임금 월 환산 기준(209시간)</li>
+</ul>
+<p>이 페이지는 회의 운영을 돕기 위한 단순 추정 계산입니다. 급여·인건비 산정에 관한 노무 판단은 고용노동부 고객상담센터(국번 없이 1350)에 문의하세요.</p>
+
+<h2>함께 보면 좋은 서식·가이드</h2>
+<div class="related">
+<a href="/forms/meetingagenda/">회의 안건지<small>안건별 시간과 참석자를 미리 정할 때</small></a>
+<a href="/forms/minutes/">회의록<small>결정 사항과 담당자를 남길 때</small></a>
+<a href="/guide/minutes-writing/">회의록 잘 쓰는 법<small>불참자도 이해하는 기록 요령</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>문의: <a href="mailto:chtraders416@gmail.com">chtraders416@gmail.com</a></p>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "회의 비용 계산기",
+  inputs: [["people", "참석 인원", "number", "6"], ["salary", "참석자 평균 연봉", "number", "45000000"], ["minutes", "회의 시간(분)", "number", "60"], ["per", "회의 횟수(주)", "number", "1"]],
+  compute: function (v, H) {
+    var p = H.num(v.people), s = H.num(v.salary), m = H.num(v.minutes), k = H.num(v.per) || 1; if (!p || !s || !m) return null;
+    var hourly = s / 12 / 209, once = hourly * p * m / 60;
+    return { rows: [["1인 시간당 인건비(추정)", H.won(hourly)], ["회의 1회 비용", H.won(once), "main"], ["주간 비용", H.won(once * k)], ["연간 비용(52주)", H.won(once * k * 52)]],
+             note: "연봉 ÷ 12 ÷ 209시간으로 시간당 인건비를 잡은 단순 추정입니다. 4대보험 회사 부담분, 준비·이동 시간은 넣지 않았습니다." };
+  },
+  sample: { people: "8", salary: "48000000", minutes: "90", per: "1" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

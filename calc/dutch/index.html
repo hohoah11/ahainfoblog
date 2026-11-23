@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>더치페이 계산기, 1인당 금액과 남는 돈까지 | 아하서식</title>
+<meta name="description" content="회식·모임 비용을 인원수로 나누고, 1,000원 단위 등으로 올린 송금액과 그 때문에 남는 돈까지 한 번에 계산합니다. 총무 정산 순서와 법인카드 회식 주의점도 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/dutch/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="더치페이 계산기, 1인당 금액과 남는 돈까지 | 아하서식">
+<meta property="og:description" content="회식·모임 비용을 인원수로 나누고, 1,000원 단위 등으로 올린 송금액과 그 때문에 남는 돈까지 한 번에 계산합니다. 총무 정산 순서와 법인카드 회식 주의점도 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/dutch/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "더치페이 계산기, 송금액과 남는 돈까지", "description": "회식·모임 비용을 인원수로 나누고, 1,000원 단위 등으로 올린 송금액과 그 때문에 남는 돈까지 한 번에 계산합니다. 총무 정산 순서와 법인카드 회식 주의점도 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/dutch/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "남는 돈은 꼭 총무가 가져가야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "정해진 규칙은 없습니다. 보통은 결제하고 정산까지 챙긴 수고비로 보고 총무가 갖습니다. 금액이 크다면 다음 모임 회비로 넘기는 방법도 있습니다. 모임 시작 전에 정해 두면 편합니다."}}, {"@type": "Question", "name": "인원에 결제한 사람도 넣어야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "넣어야 합니다. 인원은 비용을 나눠 낼 전체 사람 수입니다. 결제한 사람도 자기 몫을 부담하므로 인원에 포함해서 나누고, 송금은 나머지 사람만 하면 됩니다."}}, {"@type": "Question", "name": "입력한 금액이 어딘가에 기록되나요?", "acceptedAnswer": {"@type": "Answer", "text": "입력값은 서버로 전송되지 않습니다. 계산은 지금 보고 있는 화면에서만 이뤄집니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 더치페이 계산기</div></div>
+  <h1>더치페이 계산기, 송금액과 남는 돈까지</h1>
+  <p class="lead">총 금액과 인원을 넣으면 1인당 정확한 금액과 올림 단위에 맞춘 송금액이 바로 나옵니다. 올림 때문에 생기는 차액은 총무 몫으로 따로 보여 줍니다. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>이 계산기로 해결되는 일</h2>
+<p>회식이 끝나면 보통 한 사람이 카드로 먼저 결제합니다. 그러면 곧 "한 사람당 얼마 보내면 돼요?"라는 질문이 나옵니다. 영수증 금액을 인원수로 나누면 47,833원처럼 끝자리가 지저분하게 남습니다. 그래서 1,000원 단위로 올려 48,000원씩 받는 경우가 많습니다.</p>
+<p>이 계산기는 이 과정을 한 화면에서 처리합니다. 결과는 네 가지입니다.</p>
+<ul>
+<li><b>1인당 정확한 금액</b>: 총 금액을 인원으로 나눈 값</li>
+<li><b>1인당 보낼 금액</b>: 정확한 금액을 정한 올림 단위로 올린 값</li>
+<li><b>모으면</b>: 보낼 금액에 인원을 곱한 값</li>
+<li><b>남는 돈(총무 몫)</b>: 모은 돈에서 총 금액을 뺀 차액</li>
+</ul>
+<p>숫자를 바꾸면 결과가 바로 다시 계산됩니다. 처음이라면 '예시 값 넣기' 버튼으로 결과가 어떻게 나오는지 먼저 확인해 보세요. 총무가 미리 낸 금액 칸은 선택 항목이어서 비워 둬도 계산됩니다.</p>
+
+<h2>계산 순서와 각 숫자의 뜻</h2>
+<table>
+<tr><th>단계</th><th>계산</th><th>의미</th></tr>
+<tr><td>1</td><td>총 금액 ÷ 인원</td><td>1인당 정확한 금액. 원 단위 아래까지 나올 수 있습니다.</td></tr>
+<tr><td>2</td><td>1의 값을 올림 단위로 올림</td><td>1인당 보낼 금액. 송금하기 편한 숫자입니다.</td></tr>
+<tr><td>3</td><td>2의 값 × 인원</td><td>모으면. 실제로 걷히는 총액입니다.</td></tr>
+<tr><td>4</td><td>3의 값 − 총 금액</td><td>남는 돈. 올림 때문에 생긴 차액입니다.</td></tr>
+</table>
+<p>내림 대신 올림을 쓰는 데는 이유가 있습니다. 내림으로 맞추면 나눗셈이 딱 떨어지지 않는 한 걷은 돈이 결제 금액보다 모자라고, 그 부족분은 결국 결제한 사람이 떠안습니다. 올림으로 맞추면 차액은 남는 쪽으로만 생기고, 그 돈은 먼저 결제한 총무에게 돌아갑니다.</p>
+
+<h2>숫자로 보는 정산 예시</h2>
+<h3>예시 1. 6명 고깃집 회식, 287,000원</h3>
+<p>여섯 명이 회식을 하고 염지수 씨가 287,000원을 카드로 결제했습니다. 올림 단위는 1,000원입니다.</p>
+<table>
+<tr><th>항목</th><th>값</th></tr>
+<tr><td>1인당 정확한 금액</td><td>287,000 ÷ 6 = 47,833.33…원</td></tr>
+<tr><td>1인당 보낼 금액</td><td>48,000원</td></tr>
+<tr><td>모으면</td><td>48,000 × 6 = 288,000원</td></tr>
+<tr><td>남는 돈(총무 몫)</td><td>288,000 − 287,000 = 1,000원</td></tr>
+</table>
+<p>결제한 사람은 따로 돈을 보낼 필요가 없습니다. 나머지 5명이 48,000원씩 보내면 240,000원이 들어옵니다. 염지수 씨는 287,000원을 냈으므로 실제 부담액은 47,000원입니다. 다른 사람보다 1,000원 적게 낸 셈이고, 이것이 남는 돈 1,000원입니다.</p>
+
+<h3>예시 2. 7명 동호회 뒤풀이, 413,500원</h3>
+<p>같은 금액이라도 올림 단위에 따라 남는 돈이 크게 달라집니다.</p>
+<table>
+<tr><th>올림 단위</th><th>1인당 보낼 금액</th><th>모으면</th><th>남는 돈</th></tr>
+<tr><td>10원</td><td>59,080원</td><td>413,560원</td><td>60원</td></tr>
+<tr><td>100원</td><td>59,100원</td><td>413,700원</td><td>200원</td></tr>
+<tr><td>1,000원</td><td>60,000원</td><td>420,000원</td><td>6,500원</td></tr>
+</table>
+<p>정확한 1인당 금액은 59,071.43원입니다. 1,000원 단위로 올리면 한 사람이 929원쯤 더 내고, 일곱 명이면 6,500원이 남습니다. 남는 돈은 언제나 "올림 단위 × 인원"보다 작습니다. 인원이 많은 모임에서 큰 단위로 올리면 차액도 커지니, 이 점을 미리 알려 두면 뒷말이 줄어듭니다.</p>
+
+<h2>정산 전에 확인할 것</h2>
+<h3>총 금액은 실제 결제된 금액으로 넣으세요</h3>
+<p>쿠폰이나 카드 할인을 받았다면 할인 전 메뉴 가격이 아니라 영수증에 찍힌 최종 결제 금액을 넣어야 합니다. 할인 금액이 헷갈리면 <a href="/calc/discount/">할인율 계산기</a>로 먼저 확인하세요.</p>
+<h3>1차, 2차는 따로 계산하세요</h3>
+<p>1차는 8명, 2차는 5명처럼 참석자가 다르면 합쳐서 나누면 안 됩니다. 각 자리를 따로 계산하고, 둘 다 간 사람만 두 금액을 더해 보내면 됩니다.</p>
+<h3>차등 정산이 필요하면 먼저 떼어 내세요</h3>
+<p>이 계산기는 균등하게 나눕니다. 술값을 마신 사람끼리만 나누기로 했다면 술값을 따로 빼서 그 인원으로 한 번, 나머지 음식값을 전체 인원으로 한 번 계산하세요.</p>
+<h3>법인카드로 낸 회식은 나눌 대상이 아닙니다</h3>
+<p>회사 법인카드로 결제한 공식 회식은 회사 비용이므로 보통 직원끼리 다시 나눠 낼 돈이 아닙니다. 카드 매출전표가 회사의 증빙이 되므로, 결제한 사람은 영수증을 회사 규정대로 제출하면 됩니다. 회사가 일부만 지원하는 회식이라면 지원 금액을 뺀 나머지를 총 금액에 넣고 나누세요. 개인카드로 먼저 내고 회사에 청구하는 방식이 허용되는지는 회사마다 다릅니다.</p>
+<div class="tip"><b>송금 요청 팁.</b> 단체 대화방에 "총 287,000원 / 6명 / 1인 48,000원 / 남는 1,000원은 결제자 몫"처럼 네 줄로 올리면 다시 묻는 일이 줄어듭니다. 결과 인쇄 기능으로 정리본을 남겨 둘 수도 있습니다.</div>
+
+<h2>자주 묻는 질문</h2>
+<h3>남는 돈은 꼭 총무가 가져가야 하나요?</h3>
+<p>정해진 규칙은 없습니다. 보통은 결제하고 정산까지 챙긴 수고비로 보고 총무가 갖습니다. 금액이 크다면 다음 모임 회비로 넘기는 방법도 있습니다. 모임 시작 전에 정해 두면 편합니다.</p>
+<h3>1원 단위까지 정확히 나누고 싶어요.</h3>
+<p>올림 단위를 가장 작은 값으로 두면 됩니다. 그래도 나눗셈이 딱 떨어지지 않으면 몇 원은 남습니다. 1원 아래는 송금할 수 없기 때문입니다.</p>
+<h3>인원에 결제한 사람도 넣어야 하나요?</h3>
+<p>넣어야 합니다. 인원은 비용을 나눠 낼 전체 사람 수입니다. 결제한 사람도 자기 몫을 부담하므로 인원에 포함해서 나누고, 송금은 나머지 사람만 하면 됩니다.</p>
+<h3>입력한 금액이 어딘가에 기록되나요?</h3>
+<p>입력값은 서버로 전송되지 않습니다. 계산은 지금 보고 있는 화면에서만 이뤄집니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.law.go.kr/법령/법인세법" rel="nofollow noopener" target="_blank">법인세법 (국가법령정보센터)</a> - 법인 지출의 증명서류 수취</li>
+<li><a href="https://www.nts.go.kr" rel="nofollow noopener" target="_blank">국세청</a> - 신용카드 매출전표 등 적격증빙 안내</li>
+</ul>
+<p>이 페이지는 일반적인 생활·실무 정보입니다. 회식비를 회사 비용으로 처리하는 방법처럼 세무 판단이 필요한 부분은 회사 경리 담당자나 국세청 국세상담센터(국번 없이 126)에서 확인하세요.</p>
+
+<h2>함께 쓰면 편한 계산기</h2>
+<div class="related">
+<a href="/calc/discount/">할인율 계산기<small>쿠폰·카드 할인 후 실제 결제액 확인</small></a>
+<a href="/calc/percent/">퍼센트 계산기<small>비율로 나눠 낼 때 금액 계산</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>문의: <a href="mailto:chtraders416@gmail.com">chtraders416@gmail.com</a></p>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "더치페이 계산기",
+  inputs: [["total", "총 금액", "number", ""], ["people", "인원", "number", "4"], ["unit", "올림 단위", "select", "100", [["1", "1원"], ["10", "10원"], ["100", "100원"], ["1000", "1,000원"]]], ["minus", "총무가 미리 낸 금액(선택)", "number", "0", null, "카드로 한 사람이 다 냈다면 그 사람 기준 정산"]],
+  compute: function (v, H) {
+    var t = H.num(v.total), n = Math.round(H.num(v.people)), u = H.num(v.unit) || 1; if (!t || n < 1) return null;
+    var each = Math.ceil(t / n / u) * u, sum = each * n;
+    return { rows: [["1인당 정확한 금액", H.n(t / n, 1) + "원"], ["1인당 보낼 금액", H.won(each), "main"], ["모으면", H.won(sum)], ["남는 돈(총무 몫)", H.won(sum - t)]],
+             note: "올림 단위로 맞추면 조금 남는데, 그 차액을 함께 표시했습니다. 계산한 사람이 다 냈다면 나머지 " + (n - 1) + "명이 1인당 금액을 보내면 됩니다." };
+  },
+  sample: { total: "187000", people: "6", unit: "100" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>
