@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>퍼센트 계산기 - 증감률·비율·%p 차이까지 | 아하서식</title>
+<meta name="description" content="두 숫자를 넣으면 증감률과 증감량을 바로 계산합니다. A의 B%, 전체 대비 비율, 퍼센트와 퍼센트포인트(%p)의 차이를 숫자 예시로 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/percent/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="퍼센트 계산기 - 증감률·비율·%p 차이까지 | 아하서식">
+<meta property="og:description" content="두 숫자를 넣으면 증감률과 증감량을 바로 계산합니다. A의 B%, 전체 대비 비율, 퍼센트와 퍼센트포인트(%p)의 차이를 숫자 예시로 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/percent/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "퍼센트 계산기, 증감률과 증감량 바로 계산", "description": "두 숫자를 넣으면 증감률과 증감량을 바로 계산합니다. A의 B%, 전체 대비 비율, 퍼센트와 퍼센트포인트(%p)의 차이를 숫자 예시로 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/percent/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "증감률이 100%를 넘을 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "넘을 수 있습니다. A=40,000, B=100,000이면 증감률은 150%이고 B는 A의 2.5배입니다. \"150% 증가\"는 \"2.5배가 됐다\"와 같은 뜻이며, \"150%가 됐다(1.5배)\"와는 다릅니다."}}, {"@type": "Question", "name": "감소율은 몇 %까지 나올 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "값이 0이 되면 −100%입니다. 매출이나 인원처럼 음수가 될 수 없는 값은 −100%보다 더 내려가지 않습니다."}}, {"@type": "Question", "name": "소수점은 어디까지 적으면 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "정해진 규칙은 없습니다. 보고서에는 보통 소수 첫째 자리나 둘째 자리까지 쓰며, 같은 문서 안에서는 자릿수를 통일하는 것이 좋습니다."}}, {"@type": "Question", "name": "할인율도 이 계산기로 구하나요?", "acceptedAnswer": {"@type": "Answer", "text": "정가를 A, 판매가를 B로 넣으면 음수 증감률이 나오고, 부호를 뗀 값이 할인율입니다. 할인 금액과 판매가를 함께 보려면 아래 할인율 계산기가 더 편합니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 퍼센트 계산기</div></div>
+  <h1>퍼센트 계산기, 증감률과 증감량 바로 계산</h1>
+  <p class="lead">계산 종류를 고르고 A와 B에 숫자를 넣으면 증감률과 증감량이 입력하는 즉시 표시됩니다. 지난달 대비 매출 변화나 단가 인상률처럼 "몇 % 늘었나"를 확인할 때 쓰세요. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>두 숫자를 넣으면 무엇이 나오나요</h2>
+<p>이 계산기는 기준값 A와 비교값 B를 받아 두 가지 결과를 보여 줍니다. 하나는 <b>증감량</b>(B가 A보다 얼마나 많거나 적은지)이고, 다른 하나는 <b>증감률</b>(그 차이가 A의 몇 %인지)입니다. 숫자를 고치면 결과도 바로 바뀌므로 여러 경우를 빠르게 비교할 수 있습니다.</p>
+<p>처음이라면 "예시 값 넣기" 버튼으로 결과가 어떻게 나오는지 먼저 확인해 보세요. 회의 자료나 보고서에 붙일 때는 결과 인쇄 기능을 쓰면 됩니다. 입력한 숫자는 서버로 전송되지 않습니다.</p>
+
+<h2>증감률 공식과 A·B를 넣는 순서</h2>
+<p>계산기는 다음 공식을 씁니다.</p>
+<ul>
+<li><b>증감률(%) = (B − A) ÷ A × 100</b></li>
+<li><b>증감량 = B − A</b></li>
+</ul>
+<table>
+<tr><th>항목</th><th>뜻</th><th>넣는 값의 예</th></tr>
+<tr><td>A (기준값)</td><td>비교의 출발점. 나누는 수가 됩니다</td><td>지난달 매출, 인상 전 단가, 작년 인원</td></tr>
+<tr><td>B (비교값)</td><td>바뀐 뒤의 값</td><td>이번 달 매출, 인상 후 단가, 올해 인원</td></tr>
+<tr><td>증감량</td><td>B에서 A를 뺀 값. 줄었으면 음수</td><td>원, 명, 개 등 원래 단위 그대로</td></tr>
+<tr><td>증감률</td><td>증감량을 A로 나눈 비율</td><td>양수면 증가, 음수면 감소</td></tr>
+</table>
+<p>가장 흔한 실수는 A와 B를 바꿔 넣는 것입니다. 기준이 되는 "이전 값"이 항상 A입니다. 순서를 바꾸면 증감량은 부호만 바뀌지만, 증감률은 숫자 자체가 달라집니다.</p>
+
+<h2>사례로 확인하는 세 가지 퍼센트 계산</h2>
+<h3>증가와 감소: 같은 15%라도 금액은 다릅니다</h3>
+<p>꽃집을 운영하는 정다온 씨의 월 매출로 계산해 보겠습니다. 이 페이지의 증감률은 소수 둘째 자리까지 표시했습니다.</p>
+<table>
+<tr><th>경우</th><th>A</th><th>B</th><th>증감량</th><th>증감률</th></tr>
+<tr><td>3월 → 4월</td><td>4,800,000원</td><td>5,520,000원</td><td>720,000원</td><td>15.00%</td></tr>
+<tr><td>6월 → 7월</td><td>3,200,000원</td><td>2,720,000원</td><td>−480,000원</td><td>−15.00%</td></tr>
+<tr><td>9월 → 10월</td><td>2,950,000원</td><td>3,481,000원</td><td>531,000원</td><td>18.00%</td></tr>
+</table>
+<p>첫 줄과 둘째 줄은 증감률이 모두 15%인데 증감량은 72만 원과 48만 원으로 다릅니다. 기준값 A가 다르기 때문입니다. 보고할 때 증감률과 증감량을 함께 적으면 오해가 줄어듭니다.</p>
+
+<h3>A의 B%: 일부 금액 구하기</h3>
+<p>"월급 2,350,000원의 12%는 얼마인가"처럼 전체에서 일부를 구할 때는 <b>A × B ÷ 100</b>으로 계산합니다. 2,350,000 × 12 ÷ 100 = 282,000원입니다. 반대로 "282,000원은 2,350,000원의 몇 %인가"는 282,000 ÷ 2,350,000 × 100 = 12%입니다.</p>
+
+<h3>비율: 전체 중 몇 %인가</h3>
+<p>직원 37명 중 원격근무자가 9명이라면 9 ÷ 37 × 100 = 24.32%입니다. 비율은 "부분 ÷ 전체"이고, 증감률은 "차이 ÷ 이전 값"입니다. 무엇으로 나누는지만 기억하면 헷갈리지 않습니다.</p>
+
+<h2>퍼센트(%)와 퍼센트포인트(%p)는 다릅니다</h2>
+<p>이미 %로 표시된 값끼리 비교할 때, 두 값을 그냥 뺀 차이는 <b>퍼센트포인트(%p)</b>이고 그 차이를 이전 값으로 나눈 것은 <b>증감률(%)</b>입니다. 실제 제도 변화로 비교해 보겠습니다.</p>
+<table>
+<tr><th>항목</th><th>이전</th><th>이후</th><th>차이(%p 또는 원)</th><th>증감률</th></tr>
+<tr><td>국민연금 보험료율</td><td>9% (2025년)</td><td>9.5% (2026년)</td><td>0.5%p</td><td>5.56%</td></tr>
+<tr><td>건강보험료율</td><td>7.09% (2025년)</td><td>7.19% (2026년)</td><td>0.10%p</td><td>1.41%</td></tr>
+<tr><td>최저임금 시간급</td><td>10,030원 (2025년)</td><td>10,320원 (2026년)</td><td>290원</td><td>2.89%</td></tr>
+<tr><td>최저임금 시간급</td><td>10,320원 (2026년)</td><td>10,700원 (2027년)</td><td>380원</td><td>3.68%</td></tr>
+</table>
+<p>국민연금 보험료율은 "0.5%p 올랐다"고 써야 정확합니다. "0.5% 올랐다"고 쓰면 실제보다 훨씬 작게 오른 것처럼 읽힙니다. 기준 금액이 같다면 내는 보험료는 약 5.56% 늘어납니다. 계산기에 A=9, B=9.5를 넣으면 증감량 0.5가 %p 차이이고, 증감률 5.56%가 상대적인 변화입니다. 2026년 최저임금 인상률은 2.9%로 발표되었는데, 위 표의 2.89%를 소수 첫째 자리까지 반올림한 값입니다.</p>
+
+<h2>결과를 읽을 때 주의할 점</h2>
+<h3>20% 올랐다가 20% 내리면 원래대로 돌아오지 않습니다</h3>
+<p>1,000,000원이 20% 오르면 1,200,000원입니다. 여기서 20% 내리면 기준이 1,200,000원이므로 960,000원이 됩니다. 처음보다 4% 낮습니다. 연속된 증감률은 단순히 더하거나 빼지 말고 단계마다 계산하세요.</p>
+<h3>부가세 포함 금액에서 10%를 빼면 틀립니다</h3>
+<p>합계 110,000원에서 10%를 빼면 99,000원이 나오지만, 실제 공급가액은 110,000 ÷ 1.1 = 100,000원입니다. 부가세 10%는 공급가액을 기준으로 붙기 때문입니다. 포함 금액에서 거꾸로 구할 때는 1.1로 나눠야 합니다.</p>
+<h3>A가 0이면 증감률을 구할 수 없습니다</h3>
+<p>0으로는 나눌 수 없습니다. 신규 거래처처럼 이전 실적이 0이라면 보통 증감률 대신 증감량만 적습니다.</p>
+<div class="note"><b>보험료 계산에 쓸 때.</b> 보험료율의 증감률은 제도가 얼마나 바뀌었는지를 보여 줄 뿐입니다. 실제 4대보험료는 보수월액 산정, 상·하한, 정산 때문에 단순 계산과 다를 수 있습니다.</div>
+
+<h2>자주 묻는 질문</h2>
+<h3>증감률이 100%를 넘을 수 있나요?</h3>
+<p>넘을 수 있습니다. A=40,000, B=100,000이면 증감률은 150%이고 B는 A의 2.5배입니다. "150% 증가"는 "2.5배가 됐다"와 같은 뜻이며, "150%가 됐다(1.5배)"와는 다릅니다.</p>
+<h3>감소율은 몇 %까지 나올 수 있나요?</h3>
+<p>값이 0이 되면 −100%입니다. 매출이나 인원처럼 음수가 될 수 없는 값은 −100%보다 더 내려가지 않습니다.</p>
+<h3>소수점은 어디까지 적으면 되나요?</h3>
+<p>정해진 규칙은 없습니다. 보고서에는 보통 소수 첫째 자리나 둘째 자리까지 쓰며, 같은 문서 안에서는 자릿수를 통일하는 것이 좋습니다.</p>
+<h3>할인율도 이 계산기로 구하나요?</h3>
+<p>정가를 A, 판매가를 B로 넣으면 음수 증감률이 나오고, 부호를 뗀 값이 할인율입니다. 할인 금액과 판매가를 함께 보려면 아래 할인율 계산기가 더 편합니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.moel.go.kr" rel="nofollow noopener" target="_blank">고용노동부</a> - 연도별 최저임금 고시 내용</li>
+<li><a href="https://www.nts.go.kr" rel="nofollow noopener" target="_blank">국세청</a> - 부가가치세율과 공급가액 계산</li>
+</ul>
+<p>위 보험료율과 최저임금 예시는 퍼센트 계산을 설명하기 위한 것입니다. 실제 4대보험료는 4대사회보험 정보연계센터에서 계산해 볼 수 있습니다. 임금 관련 판단은 고용노동부 고객상담센터(국번 없이 1350), 부가가치세 관련 문의는 국세청 국세상담센터(국번 없이 126)에서 확인하세요.</p>
+
+<h2>같이 쓰는 계산기</h2>
+<div class="related">
+<a href="/calc/discount/">할인율 계산기<small>정가와 판매가로 할인 비율 확인</small></a>
+<a href="/calc/margin/">마진율 계산기<small>원가와 판매가로 남는 비율 계산</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "퍼센트 계산기",
+  inputs: [["mode", "계산 종류", "select", "of", [["of", "A의 B%는 얼마?"], ["ratio", "A는 B의 몇 %?"], ["change", "A에서 B로 바뀌면 몇 % 증감?"]]], ["a", "A", "number", ""], ["b", "B", "number", ""]],
+  compute: function (v, H) {
+    var a = H.num(v.a), b = H.num(v.b); if (v.a === "" || v.b === "") return null;
+    if (v.mode === "of") return { rows: [["결과", H.n(a * b / 100, 4), "main"]], note: "A × B ÷ 100" };
+    if (v.mode === "ratio") return b ? { rows: [["결과", H.n(a / b * 100, 4) + "%", "main"]], note: "A ÷ B × 100" } : null;
+    return a ? { rows: [["증감률", H.n((b - a) / a * 100, 2) + "%", "main"], ["증감량", H.n(b - a, 4)]], note: "(B − A) ÷ A × 100. 퍼센트포인트(%p)와 다르니 주의하세요." } : null;
+  },
+  sample: { mode: "change", a: "1200", b: "1380" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

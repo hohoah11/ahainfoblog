@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>글자수 세기, 공백 포함·제외와 바이트까지 한 번에 | 아하서식</title>
+<meta name="description" content="자기소개서·보고서 글을 붙여넣으면 공백 포함·제외 글자 수, 줄 수, UTF-8 바이트와 한글 2바이트 기준 바이트를 바로 보여 줍니다. 제한 기준을 확인하는 방법도 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/charcount/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="글자수 세기, 공백 포함·제외와 바이트까지 한 번에 | 아하서식">
+<meta property="og:description" content="자기소개서·보고서 글을 붙여넣으면 공백 포함·제외 글자 수, 줄 수, UTF-8 바이트와 한글 2바이트 기준 바이트를 바로 보여 줍니다. 제한 기준을 확인하는 방법도 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/charcount/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "글자수 세기, 붙여넣으면 바로 나옵니다", "description": "자기소개서·보고서 글을 붙여넣으면 공백 포함·제외 글자 수, 줄 수, UTF-8 바이트와 한글 2바이트 기준 바이트를 바로 보여 줍니다. 제한 기준을 확인하는 방법도 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/charcount/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "\"예시 값 넣기\"는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "샘플 문장을 자동으로 채워 각 결과가 어떻게 표시되는지 보여 주는 버튼입니다. 처음 쓸 때 계산 방식을 확인하는 용도로 누르면 됩니다."}}, {"@type": "Question", "name": "글을 고치면 계산 버튼을 다시 눌러야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아닙니다. 글자를 넣거나 지우는 즉시 다섯 가지 결과가 바뀝니다. 문장을 다듬으면서 남은 분량을 바로 확인할 수 있습니다."}}, {"@type": "Question", "name": "보고서 분량을 \"A4 몇 장\"으로 맞추라는데 글자 수로 알 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "장수는 글꼴 크기, 줄 간격, 여백에 따라 달라져 글자 수만으로 정확히 정할 수 없습니다. 같은 서식으로 한 장을 먼저 채워 글자 수를 재 두고, 그 숫자를 기준으로 전체 분량을 가늠하는 방법이 현실적입니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 글자수 세기</div></div>
+  <h1>글자수 세기, 붙여넣으면 바로 나옵니다</h1>
+  <p class="lead">글을 아래 칸에 붙여넣으면 공백 포함·공백 제외 글자 수, 줄 수, 바이트 수를 입력하는 즉시 보여 줍니다. 자기소개서 문항 제한이나 시스템 입력 한도를 맞출 때 쓰세요. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>이 계산기로 확인할 수 있는 다섯 가지 숫자</h2>
+<p>자기소개서 문항에는 보통 "1,000자 이내"처럼 글자 수 제한이 붙습니다. 그런데 같은 글도 띄어쓰기를 세는지, 바이트로 세는지에 따라 숫자가 크게 달라집니다. 이 계산기는 붙여넣은 글 하나로 다섯 가지 기준을 한꺼번에 보여 줍니다. 제출처가 어느 기준으로 제한하는지만 알면 바로 비교할 수 있습니다.</p>
+<table>
+<tr><th>결과 항목</th><th>세는 방법</th><th>주로 쓰는 곳</th></tr>
+<tr><td>공백 포함</td><td>띄어쓰기까지 모두 한 글자로 셈</td><td>자기소개서 문항 제한에서 흔히 쓰는 기준</td></tr>
+<tr><td>공백 제외</td><td>띄어쓰기를 빼고 셈</td><td>일부 채용 시스템, 원고 분량 계산</td></tr>
+<tr><td>줄 수</td><td>줄바꿈으로 나뉜 줄의 개수</td><td>문단 수 확인, 줄 수 제한 양식</td></tr>
+<tr><td>바이트(UTF-8)</td><td>한글 1자 3바이트, 영문·숫자·공백 1바이트</td><td>웹 입력창, 데이터베이스 저장 한도</td></tr>
+<tr><td>바이트(한글 2바이트 기준)</td><td>한글 1자 2바이트, 영문·숫자·공백 1바이트</td><td>오래된 입력 시스템, 바이트 제한 안내문</td></tr>
+</table>
+<p>입력한 글은 이 브라우저 안에서만 셉니다. 서버로 전송되지 않고 어디에도 저장되지 않으니, 회사 내부 보고서나 제출 전인 자기소개서도 붙여넣을 수 있습니다.</p>
+
+<h2>숫자가 어떻게 나오는지 직접 따라 세어 보기</h2>
+<p>계산 방식을 알면 결과를 믿고 쓸 수 있습니다. 실제 문장 두 개로 하나씩 세어 보겠습니다.</p>
+
+<h3>예시 1. 한글과 숫자가 섞인 문장</h3>
+<p>문장: <b>저는 물류 현장에서 3년간 일했습니다.</b></p>
+<table>
+<tr><th>항목</th><th>계산</th><th>결과</th></tr>
+<tr><td>한글 글자</td><td>저는(2) + 물류(2) + 현장에서(4) + 년간(2) + 일했습니다(5)</td><td>15자</td></tr>
+<tr><td>그 밖의 글자</td><td>숫자 "3", 마침표 "."</td><td>2자</td></tr>
+<tr><td>공백</td><td>띄어쓰기 4곳</td><td>4자</td></tr>
+<tr><td>공백 포함</td><td>15 + 2 + 4</td><td>21자</td></tr>
+<tr><td>공백 제외</td><td>15 + 2</td><td>17자</td></tr>
+<tr><td>바이트(UTF-8)</td><td>15 × 3 + 6 × 1</td><td>51바이트</td></tr>
+<tr><td>바이트(한글 2바이트)</td><td>15 × 2 + 6 × 1</td><td>36바이트</td></tr>
+</table>
+<p>같은 문장인데 가장 작은 숫자(17)와 가장 큰 숫자(51)가 정확히 세 배 차이 납니다. 제한 기준을 잘못 읽으면 글을 지나치게 줄이거나, 반대로 제출 단계에서 막히게 됩니다.</p>
+
+<h3>예시 2. 영문이 섞인 문장</h3>
+<p>문장: <b>Excel로 매출 보고서 작성</b></p>
+<table>
+<tr><th>항목</th><th>계산</th><th>결과</th></tr>
+<tr><td>한글 글자</td><td>로(1) + 매출(2) + 보고서(3) + 작성(2)</td><td>8자</td></tr>
+<tr><td>영문 글자</td><td>E, x, c, e, l</td><td>5자</td></tr>
+<tr><td>공백</td><td>띄어쓰기 3곳</td><td>3자</td></tr>
+<tr><td>공백 포함</td><td>8 + 5 + 3</td><td>16자</td></tr>
+<tr><td>공백 제외</td><td>8 + 5</td><td>13자</td></tr>
+<tr><td>바이트(UTF-8)</td><td>8 × 3 + 8 × 1</td><td>32바이트</td></tr>
+<tr><td>바이트(한글 2바이트)</td><td>8 × 2 + 8 × 1</td><td>24바이트</td></tr>
+</table>
+<p>영문과 숫자는 한 글자가 1바이트라 바이트 기준에서 한글보다 가볍습니다. 다만 영문으로 바꾼다고 늘 바이트가 줄지는 않습니다. "엑셀"을 "Excel"로 바꾸면 UTF-8 기준으로는 6바이트에서 5바이트로 줄지만, 한글 2바이트 기준으로는 4바이트에서 5바이트로 오히려 늘어납니다. 글자 수 기준에서도 "Excel"(5자)이 "엑셀"(2자)보다 길게 잡힙니다.</p>
+
+<h2>제출 전에 제한 기준부터 확인해야 하는 이유</h2>
+<p>자기소개서 제한은 보통 공백 포함 기준이지만 회사마다 다릅니다. 안내문에 "띄어쓰기 포함", "byte" 같은 표현이 있는지 먼저 보세요. 별다른 표현이 없다면 공백 포함으로 맞추는 편이 안전합니다. 공백 포함 글자 수는 공백 제외보다 항상 크거나 같기 때문에, 이 기준을 지키면 공백 제외 기준도 함께 지켜집니다.</p>
+<div class="tip"><b>분량 맞추기 예.</b> 문항 제한이 "1,000자 이내"인데 결과가 공백 포함 1,032자, 공백 제외 790자로 나왔다고 해 봅시다. 공백 포함 기준이라면 32자를 줄여야 하고, 공백 제외 기준이라면 210자가 남습니다. 기준 하나 차이로 글을 줄일지 늘릴지가 갈립니다.</div>
+<p>바이트 제한은 글자 수로 착각하기 쉽습니다. 예를 들어 한글 위주의 글이라면 "2,000바이트"는 2,000자가 아니라 UTF-8 기준 약 666자, 한글 2바이트 기준 약 1,000자 분량입니다. 안내문이 어느 바이트 기준인지 밝히지 않았다면, 숫자가 더 크게 나오는 UTF-8 결과에 맞춰 두는 것이 안전합니다.</p>
+
+<h2>숫자가 다른 프로그램과 다르게 나올 때</h2>
+<ul>
+<li><b>줄바꿈 처리</b>: 줄바꿈을 한 글자로 셀지, 공백으로 볼지, 아예 세지 않을지는 프로그램과 채용 사이트마다 다릅니다. 문단을 많이 나눈 글일수록 차이가 커집니다.</li>
+<li><b>문서 프로그램에서 복사한 글</b>: 워드프로세서에서 복사하면 눈에 보이지 않는 공백이나 줄바꿈이 함께 딸려 오기도 합니다. 실제 제출 칸에 붙여넣었을 때 숫자가 다르면 이 부분을 의심해 보세요.</li>
+<li><b>특수문자·이모지</b>: 둥근 따옴표, 가운뎃점, 이모지 같은 문자는 도구마다 세는 방식이 달라 한두 자씩 어긋날 수 있습니다. 제한에 딱 맞춘 글이라면 일반 따옴표와 마침표로 바꿔 두는 편이 낫습니다.</li>
+</ul>
+<div class="note"><b>최종 확인은 제출 화면에서.</b> 채용 사이트 입력 칸에 글자 수 표시가 있다면 그 숫자가 최종 기준입니다. 이 계산기로 미리 맞춘 뒤 제출 직전에 한 번 더 비교하세요.</div>
+
+<h2>자주 묻는 질문</h2>
+<h3>"예시 값 넣기"는 무엇인가요?</h3>
+<p>샘플 문장을 자동으로 채워 각 결과가 어떻게 표시되는지 보여 주는 버튼입니다. 처음 쓸 때 계산 방식을 확인하는 용도로 누르면 됩니다.</p>
+<h3>글을 고치면 계산 버튼을 다시 눌러야 하나요?</h3>
+<p>아닙니다. 글자를 넣거나 지우는 즉시 다섯 가지 결과가 바뀝니다. 문장을 다듬으면서 남은 분량을 바로 확인할 수 있습니다.</p>
+<h3>문항별 글자 수를 따로 기록해 두고 싶어요.</h3>
+<p>결과 인쇄 기능으로 그 시점의 결과를 출력해 둘 수 있습니다. 입력한 글은 저장되지 않으므로 원문은 따로 문서 파일로 보관하세요.</p>
+<h3>보고서 분량을 "A4 몇 장"으로 맞추라는데 글자 수로 알 수 있나요?</h3>
+<p>장수는 글꼴 크기, 줄 간격, 여백에 따라 달라져 글자 수만으로 정확히 정할 수 없습니다. 같은 서식으로 한 장을 먼저 채워 글자 수를 재 두고, 그 숫자를 기준으로 전체 분량을 가늠하는 방법이 현실적입니다.</p>
+
+<h2>계산 기준에 대한 참고</h2>
+<p>이 계산기는 법령이 아니라 문자를 세는 방식(공백 구분, UTF-8 인코딩, 한글 2바이트 기준)에 따라 결과를 냅니다. 실제 제한 기준은 각 채용 공고나 제출처 안내문이 정합니다.</p>
+
+<h2>글자 수를 맞춘 뒤 이어서 쓸 서식</h2>
+<div class="related">
+<a href="/forms/coverletter/">자기소개서<small>문항별 분량을 맞춘 글을 서식에 옮겨 정리</small></a>
+<a href="/forms/resume/">이력서<small>자기소개서와 함께 제출할 기본 서류</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "글자수 세기",
+  inputs: [["text", "글 붙여넣기", "textarea", ""]],
+  compute: function (v, H) {
+    var t = v.text || ""; if (!t) return null;
+    var noSpace = t.replace(/\s/g, "").length, bytes = 0, euc = 0;
+    for (var i = 0; i < t.length; i++) { var c = t.charCodeAt(i); bytes += c < 0x80 ? 1 : c < 0x800 ? 2 : (c >= 0xD800 && c <= 0xDBFF) ? (i++, 4) : 3; euc += c < 0x80 ? 1 : 2; }
+    return { rows: [["공백 포함", H.n(t.length, 0) + "자", "main"], ["공백 제외", H.n(noSpace, 0) + "자"], ["줄 수", t.split(/\n/).length + "줄"], ["바이트(UTF-8)", H.n(bytes, 0)], ["바이트(한글 2바이트 기준)", H.n(euc, 0)]],
+             note: "입력한 글은 이 브라우저 안에서만 세고 어디에도 저장하지 않습니다. 자기소개서 제한은 보통 '공백 포함' 기준이지만 회사마다 다르니 안내문을 확인하세요." };
+  },
+  sample: { text: "아하서식은 업무 서식을 바로 작성하는 무료 도구입니다.\n입력한 내용은 서버로 보내지 않습니다." }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

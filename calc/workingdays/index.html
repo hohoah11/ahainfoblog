@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>근무일수 계산기 - 주말·공휴일 빼고 영업일 세기 | 아하서식</title>
+<meta name="description" content="시작일과 종료일을 넣으면 전체 일수, 주말 제외 일수, 근무일수를 바로 계산합니다. 평일 공휴일과 토요일 근무를 반영할 수 있고, 근무일 기준 납기 역산 예시도 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/workingdays/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="근무일수 계산기 - 주말·공휴일 빼고 영업일 세기 | 아하서식">
+<meta property="og:description" content="시작일과 종료일을 넣으면 전체 일수, 주말 제외 일수, 근무일수를 바로 계산합니다. 평일 공휴일과 토요일 근무를 반영할 수 있고, 근무일 기준 납기 역산 예시도 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/workingdays/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "근무일수 계산기, 주말·공휴일 빼고 세기", "description": "시작일과 종료일을 넣으면 전체 일수, 주말 제외 일수, 근무일수를 바로 계산합니다. 평일 공휴일과 토요일 근무를 반영할 수 있고, 근무일 기준 납기 역산 예시도 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/workingdays/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "날짜 계산기와는 무엇이 다른가요?", "acceptedAnswer": {"@type": "Answer", "text": "날짜 계산기는 달력상 날짜를 더하고 빼는 데 씁니다. 이 계산기는 같은 기간에서 주말과 휴일을 빼고 실제 일하는 날만 셉니다. 계약 기간이나 보관 기한처럼 달력 기준이면 날짜 계산기를, 처리기한·납기처럼 근무일 기준이면 이 계산기를 쓰세요."}}, {"@type": "Question", "name": "연차 출근율 계산에 바로 써도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "참고용으로는 쓸 수 있습니다. 근로기준법은 5인 이상 사업장에서 1년간 80% 이상 출근한 근로자에게 15일의 연차유급휴가를 주도록 정하고 있습니다. 다만 출근율을 따질 때 기준이 되는 근무일은 회사의 근무 형태와 휴무 규정에 따라 달라질 수 있습니다. 연차 일수는 연차 계산기에서 따로 확인하세요."}}, {"@type": "Question", "name": "월급을 일할 계산할 때도 쓰나요?", "acceptedAnswer": {"@type": "Answer", "text": "회사마다 다릅니다. 근무일수로 나누는 회사도 있고 달력 일수로 나누는 회사도 있습니다. 취업규칙이나 근로계약서에 정한 기준을 먼저 확인하고, 그 기준에 맞는 결과(전체 일수 또는 근무일수)를 골라 쓰세요."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 근무일수 계산기</div></div>
+  <h1>근무일수 계산기, 주말·공휴일 빼고 세기</h1>
+  <p class="lead">시작일, 종료일, 기간 중 평일 공휴일 수를 넣으면 실제로 일하는 날이 며칠인지 바로 계산합니다. 납품 기한이나 근무일 기준 처리기한을 셀 때 쓰세요. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>달력으로 세면 자주 틀리는 날짜를 대신 셉니다</h2>
+<p>"근무일 기준 10일 이내 회신", "영업일 15일 내 납품"처럼 기한을 근무일로 정하는 거래가 흔합니다. 달력을 손으로 짚어 가며 세다 보면 주말을 한 번 빼먹거나 첫날을 넣을지 헷갈려 하루씩 틀리기 쉽습니다.</p>
+<p>이 계산기는 시작일부터 종료일까지의 날을 세 가지로 나눠 보여 줍니다. 달력상 전체 일수, 토·일요일을 뺀 주말 제외 일수, 평일 공휴일까지 뺀 근무일수입니다. 시작일과 종료일은 둘 다 포함해 셉니다. 값을 바꾸면 결과가 곧바로 다시 계산되므로, 종료일을 하루씩 옮겨 가며 납기를 찾을 때도 편합니다.</p>
+
+<h2>세 가지 결과는 이렇게 나옵니다</h2>
+<table>
+<tr><th>결과 항목</th><th>계산 방법</th><th>뜻</th></tr>
+<tr><td>전체 일수</td><td>종료일 − 시작일 + 1</td><td>두 날짜를 모두 포함한 달력상 날짜 수</td></tr>
+<tr><td>주말 제외 일수</td><td>전체 일수 − 기간 중 토·일요일 수</td><td>월~금 평일의 수</td></tr>
+<tr><td>근무일수</td><td>주말 제외 일수 − 평일 공휴일 수</td><td>실제로 일하는 날의 수</td></tr>
+<tr><td>토요일 근무 선택 시</td><td>근무일수에 기간 중 토요일 수를 더함</td><td>토요일에도 일하는 사업장 기준</td></tr>
+</table>
+<div class="note"><b>공휴일은 직접 입력합니다.</b> 대체공휴일이나 임시공휴일처럼 해마다 달라지는 휴일이 있고, 창립기념일·하계휴가처럼 회사가 따로 정한 휴무일도 있습니다. 그래서 계산기가 휴일을 자동으로 빼지 않고, 기간 중 월~금요일에 걸린 휴일 수만 입력받습니다. 토·일요일과 겹친 공휴일은 이미 주말로 빠졌으므로 넣지 않습니다.</div>
+
+<h2>예시 1. 한 달 동안 일하는 날 세기</h2>
+<p>단기 계약직 근무 기간이 2026년 11월 2일(월)부터 11월 27일(금)까지라고 해 보겠습니다. 이 기간의 토·일요일은 7·8일, 14·15일, 21·22일로 모두 6일입니다.</p>
+<table>
+<tr><th>조건</th><th>전체 일수</th><th>주말 제외 일수</th><th>근무일수</th></tr>
+<tr><td>평일 공휴일 0일, 토요일 근무 안 함</td><td>26일</td><td>20일</td><td>20일</td></tr>
+<tr><td>평일 공휴일 0일, 토요일 근무</td><td>26일</td><td>20일</td><td>23일</td></tr>
+<tr><td>회사 휴무일 1일 입력, 토요일 근무 안 함</td><td>26일</td><td>20일</td><td>19일</td></tr>
+</table>
+<p>두 번째 줄은 토요일 3일(7일, 14일, 21일)이 더해져 20 + 3 = 23일이 됩니다. 28일 토요일은 종료일 뒤라 들어가지 않습니다. 세 번째 줄처럼 법정 공휴일이 아니어도 회사가 쉬는 평일이 있으면 같은 칸에 넣으면 됩니다.</p>
+
+<h2>예시 2. 근무일 기준 납기 역산하기</h2>
+<p>거래처와 "발주일 다음 날부터 근무일 15일 이내 납품"으로 약속했고, 발주일이 2026년 11월 11일(수)이라고 하겠습니다. 계산기는 시작일을 포함해 세므로 시작일에는 발주일이 아니라 다음 날인 11월 12일을 넣습니다. 그다음 종료일을 옮겨 가며 근무일수가 15가 되는 날을 찾습니다.</p>
+<table>
+<tr><th>입력한 종료일</th><th>평일 공휴일</th><th>전체 일수</th><th>주말 제외 일수</th><th>근무일수</th></tr>
+<tr><td>12월 1일(화)</td><td>0일</td><td>20일</td><td>14일</td><td>14일</td></tr>
+<tr><td>12월 2일(수)</td><td>0일</td><td>21일</td><td>15일</td><td>15일</td></tr>
+<tr><td>12월 2일(수)</td><td>1일</td><td>21일</td><td>15일</td><td>14일</td></tr>
+<tr><td>12월 3일(목)</td><td>1일</td><td>22일</td><td>16일</td><td>15일</td></tr>
+</table>
+<p>휴무일이 없으면 납기는 12월 2일입니다. 그 사이에 쉬는 평일이 하루 있으면 근무일이 14일로 줄어 납기가 12월 3일로 밀립니다. 원래 납기가 금요일이었다면 휴무 하루 때문에 주말을 건너뛰어 다음 주 월요일, 곧 달력상 사흘 뒤로 밀리기도 합니다. 날짜를 하루씩 옮겨 가며 결과를 직접 확인하는 편이 안전합니다.</p>
+<div class="tip"><b>납기 메모 팁.</b> 거래처에 납기를 알릴 때는 "근무일 15일, 12월 2일(수)까지"처럼 근무일수와 실제 날짜를 함께 적으세요. 휴무일을 어떻게 셌는지를 두고 생기는 오해를 줄일 수 있습니다.</div>
+
+<h2>결과가 예상과 다를 때 확인할 것</h2>
+<h3>첫날을 포함하는 기한인가</h3>
+<p>계산기는 시작일과 종료일을 모두 셉니다. "발주일로부터", "접수 다음 날부터"처럼 계약서 문구에 따라 첫날 포함 여부가 달라집니다. 첫날을 빼야 하는 기한이면 시작일을 하루 뒤로 넣으세요.</p>
+<h3>주말에 걸린 공휴일을 또 넣지 않았나</h3>
+<p>토·일요일과 겹친 공휴일은 이미 주말로 빠졌습니다. 이를 공휴일 칸에 다시 넣으면 근무일이 하루 더 줄어듭니다. 공휴일 칸에는 월~금요일에 걸린 날만 넣습니다.</p>
+<h3>토요일에 근무하는데 그 토요일이 쉬는 날이라면</h3>
+<p>공휴일 칸은 평일 공휴일 수만 받습니다. 토요일 근무를 켠 상태에서 기간 중 토요일에 공휴일이나 휴무가 있으면, 그 날짜만큼 결과에서 직접 빼 주세요.</p>
+<h3>교대제·격일제 근무는 반영하지 않습니다</h3>
+<p>이 계산기는 월~금(또는 월~토) 근무를 전제로 합니다. 주 4일제나 교대 근무처럼 근무 요일이 고정되지 않은 경우에는 근무표로 따로 세야 합니다.</p>
+
+<h2>자주 묻는 질문</h2>
+<h3>날짜 계산기와는 무엇이 다른가요?</h3>
+<p>날짜 계산기는 달력상 날짜를 더하고 빼는 데 씁니다. 이 계산기는 같은 기간에서 주말과 휴일을 빼고 실제 일하는 날만 셉니다. 계약 기간이나 보관 기한처럼 달력 기준이면 날짜 계산기를, 처리기한·납기처럼 근무일 기준이면 이 계산기를 쓰세요.</p>
+<h3>연차 출근율 계산에 바로 써도 되나요?</h3>
+<p>참고용으로는 쓸 수 있습니다. 근로기준법은 5인 이상 사업장에서 1년간 80% 이상 출근한 근로자에게 15일의 연차유급휴가를 주도록 정하고 있습니다. 다만 출근율을 따질 때 기준이 되는 근무일은 회사의 근무 형태와 휴무 규정에 따라 달라질 수 있습니다. 연차 일수는 연차 계산기에서 따로 확인하세요.</p>
+<h3>월급을 일할 계산할 때도 쓰나요?</h3>
+<p>회사마다 다릅니다. 근무일수로 나누는 회사도 있고 달력 일수로 나누는 회사도 있습니다. 취업규칙이나 근로계약서에 정한 기준을 먼저 확인하고, 그 기준에 맞는 결과(전체 일수 또는 근무일수)를 골라 쓰세요.</p>
+<h3>처음 써 보는데 입력이 헷갈립니다.</h3>
+<p>"예시 값 넣기" 버튼을 누르면 날짜와 옵션이 채워지고 결과가 나옵니다. 그 값을 내 날짜로 바꾸면 됩니다. 결과는 인쇄할 수 있고, 입력한 날짜는 서버로 전송되지 않습니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.law.go.kr/법령/근로기준법" rel="nofollow noopener" target="_blank">근로기준법 (국가법령정보센터)</a> - 연차유급휴가와 출근율 기준</li>
+<li><a href="https://www.moel.go.kr" rel="nofollow noopener" target="_blank">고용노동부</a> - 근로시간·휴일 관련 안내</li>
+</ul>
+<p>이 페이지는 일반적인 날짜 계산 방법을 안내합니다. 연차나 임금 계산처럼 근무일수가 노무 판단으로 이어지는 경우에는 고용노동부 고객상담센터(국번 없이 1350)에 문의해 개별 사정에 맞게 확인하세요.</p>
+
+<h2>같이 쓰면 편한 계산기</h2>
+<div class="related">
+<a href="/calc/datecalc/">날짜 계산기<small>달력 기준으로 며칠 뒤·며칠 전 구하기</small></a>
+<a href="/calc/dday/">D-day 계산기<small>납기까지 남은 날 세기</small></a>
+<a href="/calc/annual/">연차 계산기<small>입사일 기준 연차 일수 확인</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "근무일수(영업일) 계산기",
+  inputs: [["s", "시작일", "date", "today"], ["e", "종료일", "date", ""], ["hol", "기간 중 평일 공휴일 수", "number", "0", null, "달력을 보고 평일에 낀 공휴일·대체공휴일 수를 넣으세요"], ["sat", "토요일 근무", "select", "no", [["no", "토요일 휴무"], ["yes", "토요일 근무"]]]],
+  compute: function (v, H) {
+    var a = H.date(v.s), b = H.date(v.e); if (!a || !b || b < a) return null;
+    var all = 0, wd = 0; for (var d = new Date(a); d <= b; d.setDate(d.getDate() + 1)) { all++; var x = d.getDay(); if (x !== 0 && (x !== 6 || v.sat === "yes")) wd++; }
+    var res = Math.max(wd - H.num(v.hol), 0);
+    return { rows: [["전체 일수", all + "일"], ["주말 제외 일수", wd + "일"], ["근무일수", res + "일", "main"]], note: "시작일과 종료일을 모두 포함해 셉니다." };
+  },
+  sample: { e: "2026-12-31", hol: "1" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>평수 계산기 - ㎡를 평으로, 평을 ㎡로 바로 변환 | 아하서식</title>
+<meta name="description" content="㎡와 평을 입력하는 즉시 서로 바꿔 줍니다. 1평 = 3.305785㎡ 기준 공식, 전용면적과 공급면적의 차이, 평당가 계산 예시까지 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/pyeong/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="평수 계산기 - ㎡를 평으로, 평을 ㎡로 바로 변환 | 아하서식">
+<meta property="og:description" content="㎡와 평을 입력하는 즉시 서로 바꿔 줍니다. 1평 = 3.305785㎡ 기준 공식, 전용면적과 공급면적의 차이, 평당가 계산 예시까지 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/pyeong/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "평수 계산기, ㎡와 평을 바로 바꿔 드립니다", "description": "㎡와 평을 입력하는 즉시 서로 바꿔 줍니다. 1평 = 3.305785㎡ 기준 공식, 전용면적과 공급면적의 차이, 평당가 계산 예시까지 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/pyeong/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "1평은 왜 3.3㎡가 아니라 3.305785㎡인가요?", "acceptedAnswer": {"@type": "Answer", "text": "3.3은 암산하기 쉽게 줄인 근사값입니다. 이 계산기는 더 정밀한 값인 3.305785를 씁니다. 면적이 클수록 두 값으로 계산한 결과의 차이가 커집니다."}}, {"@type": "Question", "name": "소수점은 몇 자리까지 보면 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "크기를 가늠하는 용도라면 소수 첫째 자리로 충분합니다. 단가를 곱하거나 서류에 옮길 때는 둘째 자리까지 보고, 원래 서류의 ㎡ 값을 우선하세요."}}, {"@type": "Question", "name": "\"84타입\"을 넣으면 몇 평인가요?", "acceptedAnswer": {"@type": "Answer", "text": "\"84타입\"은 흔히 전용면적 84㎡를 뜻하며, 약 25.41평입니다. 공급면적 기준 평수를 알고 싶다면 분양 공고나 매물 정보에서 공급면적을 따로 찾아 입력하세요."}}, {"@type": "Question", "name": "여러 방의 면적을 합쳐서 계산해도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "됩니다. ㎡ 값을 먼저 모두 더한 뒤 한 번만 평으로 바꾸세요. 방마다 평으로 바꾸고 반올림해서 더하면 끝자리가 조금 어긋날 수 있습니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 평수 계산기</div></div>
+  <h1>평수 계산기, ㎡와 평을 바로 바꿔 드립니다</h1>
+  <p class="lead">변환 방향을 고르고 숫자를 넣으면 평과 ㎡가 바로 계산됩니다. 분양 공고나 임대 매물의 면적을 익숙한 평수로 확인할 때 쓰세요. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>이 계산기로 할 수 있는 일</h2>
+<p>매물 정보나 분양 공고에는 면적이 대부분 ㎡로 적혀 있습니다. 하지만 집이나 사무실 크기를 말할 때는 아직 "몇 평"이라고 하는 경우가 많습니다. 이 계산기는 두 단위를 서로 바꿔 줍니다.</p>
+<ul>
+<li><b>변환 방향</b>: ㎡ → 평, 평 → ㎡ 중 하나를 고릅니다.</li>
+<li><b>값</b>: 숫자를 입력하는 즉시 평과 ㎡ 결과가 함께 표시됩니다.</li>
+<li><b>예시 값 넣기</b>: 버튼을 누르면 예시 숫자가 들어가 사용법을 바로 확인할 수 있습니다.</li>
+<li><b>결과 인쇄</b>: 매물 비교표에 붙이거나 회의 자료로 쓸 때 인쇄할 수 있습니다.</li>
+</ul>
+<p>입력값은 서버로 전송되지 않습니다.</p>
+
+<h2>평과 ㎡를 바꾸는 공식</h2>
+<p>계산 기준은 <b>1평 = 3.305785㎡</b> 하나뿐입니다.</p>
+<table>
+<tr><th>변환</th><th>공식</th><th>설명</th></tr>
+<tr><td>㎡ → 평</td><td>㎡ ÷ 3.305785</td><td>0.3025를 곱해도 결과가 거의 같습니다</td></tr>
+<tr><td>평 → ㎡</td><td>평 × 3.305785</td><td>암산할 때는 흔히 3.3을 곱합니다</td></tr>
+</table>
+<p>0.3025는 1 ÷ 3.305785를 계산해 반올림한 값입니다. 예를 들어 84 × 0.3025 = 25.41로, 84 ÷ 3.305785의 결과와 소수 둘째 자리까지 같습니다. 나눗셈보다 곱셈이 편할 때 쓰기 좋습니다.</p>
+
+<h2>숫자로 보는 변환 예시</h2>
+<p>아래 표의 값은 소수 셋째 자리에서 반올림했습니다.</p>
+<h3>㎡를 평으로 바꿀 때</h3>
+<table>
+<tr><th>상황</th><th>입력(㎡)</th><th>계산</th><th>결과(평)</th></tr>
+<tr><td>매물 정보의 전용면적</td><td>59</td><td>59 ÷ 3.305785</td><td>약 17.85평</td></tr>
+<tr><td>매물 정보의 전용면적</td><td>84</td><td>84 ÷ 3.305785</td><td>약 25.41평</td></tr>
+<tr><td>분양 공고의 공급면적</td><td>112.4</td><td>112.4 ÷ 3.305785</td><td>약 34.00평</td></tr>
+</table>
+<h3>평을 ㎡로 바꿀 때</h3>
+<table>
+<tr><th>상황</th><th>입력(평)</th><th>계산</th><th>결과(㎡)</th><th>3.3을 곱했을 때</th></tr>
+<tr><td>원룸 크기 확인</td><td>6</td><td>6 × 3.305785</td><td>약 19.83㎡</td><td>19.8㎡</td></tr>
+<tr><td>소규모 사무실 임차</td><td>20</td><td>20 × 3.305785</td><td>약 66.12㎡</td><td>66㎡</td></tr>
+<tr><td>창고·매장 면적</td><td>150</td><td>150 × 3.305785</td><td>약 495.87㎡</td><td>495㎡</td></tr>
+</table>
+<p>면적이 작을 때는 3.3으로 어림해도 차이가 거의 없습니다. 하지만 150평이면 약 0.87㎡가 차이 납니다. 면적에 단가를 곱하는 계산이라면 근사값 대신 3.305785를 그대로 쓰세요.</p>
+
+<h2>전용면적과 공급면적, 어느 쪽 숫자인가요</h2>
+<p>평수 계산에서 가장 흔한 혼란은 단위보다 <b>어떤 면적을 바꿨는지</b>에서 생깁니다. 위 예시의 84㎡와 112.4㎡가 같은 집의 면적일 수도 있습니다.</p>
+<table>
+<tr><th>구분</th><th>뜻(일반적 의미)</th><th>흔히 쓰는 곳</th></tr>
+<tr><td>전용면적</td><td>현관 안쪽처럼 그 세대만 쓰는 공간</td><td>매물 정보, "84타입"처럼 부르는 평형 이름</td></tr>
+<tr><td>공급면적</td><td>전용면적에 계단·복도 같은 주거 공용 부분을 더한 면적</td><td>분양 공고, 예전 방식의 "34평형"</td></tr>
+</table>
+<p>"25평 아파트"와 "34평 아파트"가 같은 집을 두고 하는 말일 수 있습니다. 이 경우 앞의 것은 전용면적, 뒤의 것은 공급면적 기준입니다. 단지마다 공용 부분의 비율이 달라서 전용면적이 같아도 공급면적은 다를 수 있습니다. 발코니처럼 보통 어느 면적에도 들어가지 않는 공간도 있으니, 실제로 쓰는 넓이는 평면도로 함께 확인하세요.</p>
+<div class="tip"><b>전용률 확인 방법.</b> 전용면적 ÷ 공급면적 × 100으로 계산합니다. 84 ÷ 112.4 × 100 = 약 74.7%입니다. 아래 퍼센트 계산기에 두 숫자를 넣으면 바로 나옵니다.</div>
+
+<h2>평당가를 비교할 때 주의할 점</h2>
+<p>같은 매물이라도 어떤 면적으로 나누느냐에 따라 평당가가 크게 달라집니다. 매매가 6억원, 공급면적 34평, 전용면적 25.41평인 집으로 계산해 보겠습니다.</p>
+<table>
+<tr><th>기준 면적</th><th>계산</th><th>평당가</th></tr>
+<tr><td>공급면적 34평</td><td>600,000,000 ÷ 34</td><td>약 1,765만원</td></tr>
+<tr><td>전용면적 25.41평</td><td>600,000,000 ÷ 25.41</td><td>약 2,361만원</td></tr>
+</table>
+<p>한 집인데 평당가가 600만원 가까이 차이 납니다. 매물 여러 개를 비교할 때는 모두 같은 면적 기준으로 맞춘 뒤 나누세요.</p>
+
+<h2>계산 전에 확인할 것</h2>
+<div class="note"><b>주의.</b> 계산기는 입력한 숫자의 단위만 바꿔 줍니다. 입력한 숫자가 전용면적인지, 공급면적인지, 다른 면적인지는 판단하지 않습니다. 원래 서류에 적힌 면적 이름을 결과 옆에 같이 적어 두세요.</div>
+<ul>
+<li>사무실이나 상가는 공용 부분을 포함해 면적을 표시하는 경우가 많습니다. 임대료를 비교할 때는 같은 기준의 면적인지 확인하세요.</li>
+<li>결과를 다시 반대로 바꾸면 반올림 때문에 원래 숫자와 끝자리가 조금 다를 수 있습니다. 계약서에는 원래 서류의 ㎡ 숫자를 그대로 옮기세요.</li>
+<li>평수는 이해를 돕는 참고 단위로 쓰고, 공식 서류에서는 ㎡ 표기를 기준으로 삼는 것이 안전합니다.</li>
+</ul>
+
+<h2>자주 묻는 질문</h2>
+<h3>1평은 왜 3.3㎡가 아니라 3.305785㎡인가요?</h3>
+<p>3.3은 암산하기 쉽게 줄인 근사값입니다. 이 계산기는 더 정밀한 값인 3.305785를 씁니다. 면적이 클수록 두 값으로 계산한 결과의 차이가 커집니다.</p>
+<h3>소수점은 몇 자리까지 보면 되나요?</h3>
+<p>크기를 가늠하는 용도라면 소수 첫째 자리로 충분합니다. 단가를 곱하거나 서류에 옮길 때는 둘째 자리까지 보고, 원래 서류의 ㎡ 값을 우선하세요.</p>
+<h3>"84타입"을 넣으면 몇 평인가요?</h3>
+<p>"84타입"은 흔히 전용면적 84㎡를 뜻하며, 약 25.41평입니다. 공급면적 기준 평수를 알고 싶다면 분양 공고나 매물 정보에서 공급면적을 따로 찾아 입력하세요.</p>
+<h3>여러 방의 면적을 합쳐서 계산해도 되나요?</h3>
+<p>됩니다. ㎡ 값을 먼저 모두 더한 뒤 한 번만 평으로 바꾸세요. 방마다 평으로 바꾸고 반올림해서 더하면 끝자리가 조금 어긋날 수 있습니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.law.go.kr" rel="nofollow noopener" target="_blank">국가법령정보센터</a> - 면적 표기와 관련된 법령 검색</li>
+</ul>
+<p>이 페이지는 단위 변환에 대한 일반 정보입니다. 분양·임대 계약서에 적힌 면적의 정확한 범위는 해당 분양 공고나 계약 상대방, 중개사무소에 확인하세요.</p>
+
+<h2>관련 계산기</h2>
+<div class="related">
+<a href="/calc/percent/">퍼센트 계산기<small>전용률, 면적 증감 비율 계산</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "평수 계산기",
+  inputs: [["mode", "변환 방향", "select", "m2p", [["m2p", "㎡ → 평"], ["p2m", "평 → ㎡"]]], ["v", "값", "number", "84"]],
+  compute: function (v, H) {
+    var x = H.num(v.v); if (!x) return null; var k = 3.305785;
+    return v.mode === "m2p" ? { rows: [["평", H.n(x / k, 2) + "평", "main"], ["㎡", H.n(x, 2) + "㎡"]], note: "1평 = 3.305785㎡. 아파트 분양 면적(공급면적)과 전용면적은 다르니 어떤 면적인지 확인하세요." }
+                            : { rows: [["㎡", H.n(x * k, 2) + "㎡", "main"], ["평", H.n(x, 2) + "평"]], note: "1평 = 3.305785㎡." };
+  },
+  sample: { mode: "m2p", v: "59.9" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

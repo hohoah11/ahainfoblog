@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-day 계산기, 남은 날짜와 기준일 포함 일수 | 아하서식</title>
+<meta name="description" content="기준일과 목표일을 넣으면 D-day와 기준일 포함 일수를 바로 보여 줍니다. 신고 기한, 계약 만료, 적용일 준비처럼 남은 날짜를 셀 때 헷갈리는 기준을 예시로 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/dday/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="D-day 계산기, 남은 날짜와 기준일 포함 일수 | 아하서식">
+<meta property="og:description" content="기준일과 목표일을 넣으면 D-day와 기준일 포함 일수를 바로 보여 줍니다. 신고 기한, 계약 만료, 적용일 준비처럼 남은 날짜를 셀 때 헷갈리는 기준을 예시로 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/dday/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "D-day 계산기, 남은 날짜 바로 세기", "description": "기준일과 목표일을 넣으면 D-day와 기준일 포함 일수를 바로 보여 줍니다. 신고 기한, 계약 만료, 적용일 준비처럼 남은 날짜를 셀 때 헷갈리는 기준을 예시로 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/dday/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "D-1이 마감이면 오늘 끝내야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "아닙니다. D-1은 목표일이 내일이라는 뜻이므로 오늘과 내일, 이틀 동안 처리할 수 있습니다. 다만 목표일 당일에 은행이나 시스템의 마감 시각이 있으면 실제 여유는 더 짧습니다."}}, {"@type": "Question", "name": "기준일 포함 일수는 언제 쓰나요?", "acceptedAnswer": {"@type": "Answer", "text": "기간 전체의 길이를 말할 때 씁니다. 12월 1일부터 12월 5일까지 진행하는 교육은 D-day로는 4일 차이지만 교육 기간은 5일입니다. 대관처럼 날짜 단위로 비용을 매기는 경우에도 포함 일수를 봅니다. 숙박은 박 단위로 세므로 같은 기간이라도 4박이 되어 D-day 숫자와 같습니다."}}, {"@type": "Question", "name": "여러 마감일을 한 번에 정리할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "한 번에 하나씩 계산합니다. 목표일을 바꿔 가며 계산한 뒤 필요한 결과를 인쇄해 두거나 위 예시처럼 표로 옮겨 적으면 월간 일정표로 쓸 수 있습니다."}}, {"@type": "Question", "name": "입력한 날짜가 어딘가에 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "입력값은 서버로 전송되지 않습니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › D-day 계산기</div></div>
+  <h1>D-day 계산기, 남은 날짜 바로 세기</h1>
+  <p class="lead">기준일과 목표일을 넣으면 목표일까지 남은 D-day와 기준일을 포함해 센 일수를 함께 보여 줍니다. 입력하는 즉시 계산되고, 결과는 인쇄할 수 있습니다. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>남은 날짜를 셀 때 이 계산기가 하는 일</h2>
+<p>달력을 손가락으로 짚어 가며 날짜를 세면 하루씩 틀리기 쉽습니다. 오늘을 세는지, 그달 말일이 30일인지 31일인지에 따라 결과가 달라지기 때문입니다. 이 계산기는 기준일과 목표일 사이의 날짜 수를 대신 세어 줍니다.</p>
+<p>결과는 세 가지입니다. 입력한 <b>목표일</b>, 기준일을 빼고 센 <b>D-day</b>, 기준일까지 넣어 센 <b>기준일 포함 일수</b>입니다. 기준일은 보통 오늘이지만, 다른 날짜로 바꾸면 "그날 기준으로 며칠 남았는지"도 확인할 수 있습니다. 처음 쓴다면 '예시 값 넣기' 버튼으로 결과가 어떻게 나오는지 먼저 확인해 보세요.</p>
+
+<h2>D-day는 어떻게 세나요</h2>
+<p>D-day는 목표일에서 기준일을 뺀 날짜 수이고, 기준일 당일은 세지 않습니다. 그래서 목표일이 내일이면 D-1, 모레면 D-2입니다. 목표일과 기준일이 같으면 남은 날은 0일입니다.</p>
+<table>
+<tr><th>결과 항목</th><th>계산 방식</th><th>이럴 때 봅니다</th></tr>
+<tr><td>D-day</td><td>목표일 − 기준일</td><td>"앞으로 며칠 남았나"를 알고 싶을 때</td></tr>
+<tr><td>기준일 포함 일수</td><td>D-day + 1</td><td>기준일부터 목표일까지 "모두 며칠짜리 기간인가"를 알고 싶을 때</td></tr>
+</table>
+<p>목표일이 기준일 이후라면 두 숫자는 항상 1일 차이가 납니다. 월요일에 금요일 마감을 확인하면 D-day는 4이지만, 월·화·수·목·금을 모두 세면 5일입니다. 남은 날을 말할 때는 D-day를 쓰고, 행사나 프로젝트처럼 첫날도 하루로 치는 기간을 말할 때는 기준일 포함 일수를 쓰면 됩니다.</p>
+<div class="tip"><b>헷갈릴 때 기억할 한 가지.</b> "내일이 목표일이면 D-1"입니다. 오늘은 이미 시작된 날이라 남은 날에 넣지 않습니다.</div>
+
+<h2>실무 일정으로 계산해 본 예시</h2>
+<p>아래 예시는 모두 기준일을 2026년 11월 23일로 두고 계산했습니다. 11월은 30일까지이므로 11월 23일에서 11월 30일까지는 7일입니다.</p>
+<table>
+<tr><th>상황</th><th>목표일</th><th>D-day</th><th>기준일 포함 일수</th></tr>
+<tr><td>11월분 원천세 신고·납부(보통 다음 달 10일까지)</td><td>2026-12-10</td><td>D-17</td><td>18일</td></tr>
+<tr><td>2027년 최저임금 적용 시작일</td><td>2027-01-01</td><td>D-39</td><td>40일</td></tr>
+<tr><td>사무실 임대차 계약 만료일</td><td>2027-03-31</td><td>D-128</td><td>129일</td></tr>
+</table>
+<p>첫 줄은 11월에 남은 7일에 12월 10일까지의 10일을 더한 17일입니다. 둘째 줄은 7일에 12월 31일과 1월 1일 하루를 더해 39일입니다. 2027년 1월 1일부터 최저임금 시간급 10,700원이 적용되므로, 급여 담당자라면 이 날짜를 D-day로 걸어 두고 급여 기준표와 근로계약서 금액을 미리 점검할 수 있습니다. 셋째 줄은 7 + 31(12월) + 31(1월) + 28(2월) + 31(3월) = 128일입니다.</p>
+
+<h3>윤년이 끼면 하루가 달라집니다</h3>
+<p>같은 "12월 1일부터 3월 1일까지"라도 해에 따라 결과가 다릅니다. 사이에 든 2월이 29일까지 있는 해가 있기 때문입니다.</p>
+<table>
+<tr><th>기준일</th><th>목표일</th><th>2월 일수</th><th>D-day</th></tr>
+<tr><td>2026-12-01</td><td>2027-03-01</td><td>28일</td><td>D-90</td></tr>
+<tr><td>2027-12-01</td><td>2028-03-01</td><td>29일</td><td>D-91</td></tr>
+</table>
+<p>계산은 30(12월 남은 날) + 31(1월) + 2월 일수 + 1(3월 1일)입니다. "석 달이면 대충 90일"로 잡아 두면 이런 차이를 놓칩니다. 날짜를 직접 넣어 계산하면 달마다 다른 일수와 윤년이 결과에 그대로 반영됩니다.</p>
+
+<h2>결과를 쓸 때 주의할 점</h2>
+<ul>
+<li><b>주말과 공휴일도 모두 셉니다.</b> D-day는 달력상 날짜 수입니다. 영업일로 며칠 남았는지 알고 싶다면 <a href="/calc/workingdays/">근무일수 계산기</a>를 따로 쓰세요. D-17이라도 그 사이 주말을 빼면 실제로 일할 수 있는 날은 훨씬 적습니다.</li>
+<li><b>"며칠째"와 "며칠 남음"은 다릅니다.</b> 입사 100일째, 개업 100일째처럼 시작일을 1일째로 세면 시작일에 99일을 더한 날이 100일째입니다. 이런 날짜를 찾을 때는 <a href="/calc/datecalc/">날짜 계산기</a>가 더 편합니다.</li>
+<li><b>법이나 계약의 기한은 세는 규칙이 따로 있을 수 있습니다.</b> 첫날을 넣는지, 마지막 날이 휴일이면 어떻게 되는지는 법령과 계약마다 다릅니다. 이 계산기 결과는 일정 관리용으로 쓰고, 반드시 지켜야 하는 기한이라면 근거 규정을 함께 확인하세요.</li>
+<li><b>기준일을 바꿨는지 확인하세요.</b> 다른 날짜를 기준으로 계산한 뒤 기준일을 오늘로 되돌리지 않으면 엉뚱한 D-day를 보게 됩니다.</li>
+</ul>
+
+<h2>자주 묻는 질문</h2>
+<h3>D-1이 마감이면 오늘 끝내야 하나요?</h3>
+<p>아닙니다. D-1은 목표일이 내일이라는 뜻이므로 오늘과 내일, 이틀 동안 처리할 수 있습니다. 다만 목표일 당일에 은행이나 시스템의 마감 시각이 있으면 실제 여유는 더 짧습니다.</p>
+<h3>기준일 포함 일수는 언제 쓰나요?</h3>
+<p>기간 전체의 길이를 말할 때 씁니다. 12월 1일부터 12월 5일까지 진행하는 교육은 D-day로는 4일 차이지만 교육 기간은 5일입니다. 대관처럼 날짜 단위로 비용을 매기는 경우에도 포함 일수를 봅니다. 숙박은 박 단위로 세므로 같은 기간이라도 4박이 되어 D-day 숫자와 같습니다.</p>
+<h3>여러 마감일을 한 번에 정리할 수 있나요?</h3>
+<p>한 번에 하나씩 계산합니다. 목표일을 바꿔 가며 계산한 뒤 필요한 결과를 인쇄해 두거나 위 예시처럼 표로 옮겨 적으면 월간 일정표로 쓸 수 있습니다.</p>
+<h3>입력한 날짜가 어딘가에 저장되나요?</h3>
+<p>입력값은 서버로 전송되지 않습니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.moel.go.kr" rel="nofollow noopener" target="_blank">고용노동부</a> - 2027년 최저임금 적용일 등 노동 관련 고시</li>
+<li><a href="https://www.hometax.go.kr" rel="nofollow noopener" target="_blank">국세청 홈택스</a> - 원천세 신고·납부</li>
+<li><a href="https://www.law.go.kr" rel="nofollow noopener" target="_blank">국가법령정보센터</a> - 법령별 기한 규정 확인</li>
+</ul>
+<p>이 페이지는 날짜를 세는 일반적인 방법을 안내합니다. 세금 신고 기한은 국세청 국세상담센터(국번 없이 126), 퇴직·해고 등 노동 관련 기한은 고용노동부 고객상담센터(국번 없이 1350)에서 개별 사정에 맞게 확인하세요.</p>
+
+<h2>날짜를 다르게 세야 할 때</h2>
+<div class="related">
+<a href="/calc/datecalc/">날짜 계산기<small>며칠 뒤, 며칠 전 날짜 찾기</small></a>
+<a href="/calc/workingdays/">근무일수 계산기<small>주말을 뺀 실제 일하는 날 세기</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "D-day 계산기",
+  inputs: [["base", "오늘(기준일)", "date", "today"], ["target", "목표일", "date", ""]],
+  compute: function (v, H) {
+    var a = H.date(v.base), b = H.date(v.target); if (!a || !b) return null;
+    var d = H.days(a, b), w = ["일", "월", "화", "수", "목", "금", "토"][b.getDay()];
+    return { rows: [["목표일", H.fmt(b) + " (" + w + ")"], ["D-day", d > 0 ? "D-" + d : d === 0 ? "D-day" : "D+" + (-d), "main"], ["기준일 포함 일수", (Math.abs(d) + 1) + "일"]], note: "D-day는 기준일을 빼고 센 날짜 수입니다." };
+  },
+  sample: { target: "2026-12-31" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

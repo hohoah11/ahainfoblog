@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부가세 계산기 - 공급가액·부가세 10% 계산과 역산 | 아하서식</title>
+<meta name="description" content="공급가액에 부가세 10%를 더하거나, 부가세 포함 합계를 공급가액과 세액으로 거꾸로 나눕니다. 반올림과 버림의 차이, 면세 거래 처리, 자주 틀리는 계산법을 예시로 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/vat/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="부가세 계산기 - 공급가액·부가세 10% 계산과 역산 | 아하서식">
+<meta property="og:description" content="공급가액에 부가세 10%를 더하거나, 부가세 포함 합계를 공급가액과 세액으로 거꾸로 나눕니다. 반올림과 버림의 차이, 면세 거래 처리, 자주 틀리는 계산법을 예시로 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/vat/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "부가세 계산기, 공급가액과 세액 나누기", "description": "공급가액에 부가세 10%를 더하거나, 부가세 포함 합계를 공급가액과 세액으로 거꾸로 나눕니다. 반올림과 버림의 차이, 면세 거래 처리, 자주 틀리는 계산법을 예시로 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/vat/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "합계를 1.1로 나누면 왜 딱 떨어지지 않나요?", "acceptedAnswer": {"@type": "Answer", "text": "합계가 11의 배수가 아니면 소수점이 생깁니다. 그래서 원 단위 미만 처리 방식을 골라야 하고, 고른 방식에 따라 공급가액과 부가세가 1원씩 달라집니다."}}, {"@type": "Question", "name": "계산 결과를 세금계산서에 그대로 옮겨도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "금액을 확인하는 용도로는 쓸 수 있습니다. 다만 세금계산서는 국세청 홈택스 등에서 따로 발급해야 합니다. 법인사업자와 일정 규모 이상 개인사업자는 전자세금계산서 발급 의무가 있습니다. 옮겨 적기 전에 원 단위 미만 처리가 거래처 기준과 같은지 확인하세요."}}, {"@type": "Question", "name": "입력한 금액이 어딘가에 남나요?", "acceptedAnswer": {"@type": "Answer", "text": "입력값은 서버로 전송되지 않습니다. 결과를 남겨야 한다면 인쇄 기능을 쓰세요."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 부가세 계산기</div></div>
+  <h1>부가세 계산기, 공급가액과 세액 나누기</h1>
+  <p class="lead">금액을 넣으면 공급가액, 부가세(10%), 합계가 바로 나옵니다. 공급가액에 부가세를 더하는 계산과 부가세 포함 금액을 거꾸로 나누는 계산을 모두 할 수 있습니다. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>이 계산기로 하는 두 가지 계산</h2>
+<p>견적을 낼 때는 "공급가액 얼마, 부가세 별도"로 금액을 말하는 경우가 많습니다. 반대로 대금을 받거나 카드로 결제할 때는 "부가세 포함 얼마"로 돈이 오갑니다. 이 계산기는 두 표현을 서로 바꿀 때 씁니다.</p>
+<ul>
+<li><b>부가세 더하기:</b> 공급가액을 넣으면 부가세 10%와 합계를 구합니다.</li>
+<li><b>부가세 나누기(역산):</b> 부가세가 포함된 합계를 넣으면 공급가액과 부가세로 나눕니다.</li>
+</ul>
+<p>계산 방법과 원 단위 미만 처리 방식을 고르고 금액(원)을 넣으면 입력하는 즉시 결과가 바뀝니다. 처음이라면 "예시 값 넣기" 버튼을 눌러 결과가 어떻게 나오는지 먼저 확인해 보세요. 결과 화면은 인쇄할 수 있어 결재 서류에 첨부하기 좋습니다.</p>
+
+<h2>계산식과 결과 항목의 뜻</h2>
+<table>
+<tr><th>계산 방향</th><th>공급가액</th><th>부가세</th><th>합계</th></tr>
+<tr><td>부가세 더하기</td><td>입력한 금액</td><td>공급가액 × 10%</td><td>공급가액 + 부가세</td></tr>
+<tr><td>부가세 나누기</td><td>합계 ÷ 1.1</td><td>합계 − 공급가액</td><td>입력한 금액</td></tr>
+</table>
+<p><b>공급가액</b>은 세금을 뺀 물건이나 용역 자체의 값입니다. <b>부가세</b>는 일반과세 거래에서 공급가액의 10%입니다. <b>합계</b>는 실제로 주고받는 돈입니다.</p>
+<p>역산에서 1.1로 나누는 이유는 합계가 "공급가액 × 1.1"이기 때문입니다. 공급가액을 먼저 구하고, 합계에서 공급가액을 뺀 나머지를 부가세로 정합니다. 이렇게 하면 공급가액과 부가세를 더한 값이 언제나 입력한 합계와 정확히 맞습니다.</p>
+
+<h2>숫자로 보는 계산 예시</h2>
+<h3>예시 1. 외주 견적에 부가세를 더할 때</h3>
+<p>누리디자인이 브로슈어 디자인 견적을 공급가액 87,345원으로 냈습니다. 10%를 곱하면 8,734.5원이어서 원 단위 미만이 생깁니다.</p>
+<table>
+<tr><th>원 단위 미만 처리</th><th>공급가액</th><th>부가세</th><th>합계</th></tr>
+<tr><td>반올림</td><td>87,345원</td><td>8,735원</td><td>96,080원</td></tr>
+<tr><td>버림</td><td>87,345원</td><td>8,734원</td><td>96,079원</td></tr>
+</table>
+<h3>예시 2. 받은 금액에서 공급가액을 거꾸로 구할 때</h3>
+<p>소담커피가 원두 납품 대금으로 부가세 포함 50,000원을 받았습니다. 장부에는 공급가액과 세액을 나눠 적어야 합니다. 합계 1,000,000원도 같은 방식으로 계산해 함께 실었습니다.</p>
+<table>
+<tr><th>합계</th><th>처리</th><th>공급가액</th><th>부가세</th></tr>
+<tr><td>50,000원</td><td>반올림</td><td>45,455원</td><td>4,545원</td></tr>
+<tr><td>50,000원</td><td>버림</td><td>45,454원</td><td>4,546원</td></tr>
+<tr><td>1,000,000원</td><td>반올림</td><td>909,091원</td><td>90,909원</td></tr>
+<tr><td>1,000,000원</td><td>버림</td><td>909,090원</td><td>90,910원</td></tr>
+</table>
+<p>역산에서 공급가액을 버림 처리하면 부가세가 오히려 1원 늘어납니다. 합계가 고정돼 있고 부가세는 합계에서 공급가액을 뺀 나머지이기 때문입니다. 반대로 합계가 330,000원처럼 11의 배수이면 공급가액 300,000원, 부가세 30,000원으로 나누어떨어집니다.</p>
+
+<h2>계산하기 전에 알아 둘 점</h2>
+<h3>합계에 10%를 곱한 값은 부가세가 아닙니다</h3>
+<p>흔히 하는 실수입니다. 합계 50,000원에 10%를 곱해 부가세를 5,000원으로 적으면 바른 값 4,545원보다 455원이 많습니다. 금액이 크면 차이도 커집니다. 합계가 11,000,000원이면 잘못 계산한 부가세는 1,100,000원이지만 실제 부가세는 1,000,000원입니다. 부가세 포함 금액은 반드시 1.1로 나눠서 계산하세요.</p>
+<h3>반올림과 버림은 회사마다 기준이 다릅니다</h3>
+<p>원 단위 미만을 반올림할지 버릴지는 회사와 거래처마다 다릅니다. 차이는 1원이지만 견적서, 거래명세서, 청구 금액이 서로 어긋나면 대조할 때 다시 확인해야 합니다. 거래처와 기준을 미리 맞춰 두고 모든 문서에 같은 방식을 쓰는 것이 좋습니다.</p>
+<h3>품목이 여러 개면 계산 순서에 따라 1원씩 달라집니다</h3>
+<p>공급가액 1,235원짜리 품목 3개를 예로 들겠습니다. 줄마다 부가세를 반올림하면 124원 × 3 = 372원입니다. 공급가액을 먼저 더한 3,705원에 10%를 곱해 반올림하면 371원입니다. 이 계산기는 한 번에 한 금액을 계산하므로 품목별로 넣을지, 합친 금액을 넣을지 미리 정해 두세요.</p>
+<h3>면세 거래에는 부가세를 붙이지 않습니다</h3>
+<p>면세 재화·용역에는 부가세가 없으므로 받은 금액 전체가 공급가액입니다. 이때 법정 증빙은 세금계산서가 아니라 계산서입니다. 이 계산기는 10% 일반과세 기준이므로 면세 거래에는 맞지 않습니다. 과세 품목과 면세 품목이 함께 있는 거래라면 과세 품목 금액만 따로 넣어 계산하세요.</p>
+<div class="tip"><b>확인 방법.</b> 역산 결과가 맞는지 보려면 공급가액에 1.1을 곱해 보세요. 원 단위 미만 처리로 생기는 1원 미만의 차이를 빼고 입력한 합계와 같으면 제대로 나눈 것입니다.</div>
+
+<h2>자주 묻는 질문</h2>
+<h3>금액이 부가세 포함인지 별도인지 모르겠어요.</h3>
+<p>먼저 견적서나 계약서에 적힌 표시를 확인하세요. 표시가 없으면 거래처에 묻는 것이 가장 정확합니다. 다툼이 없도록 문서에 적는 방법은 <a href="/guide/quote-vat/">견적서 부가세 표시법</a>에 정리해 두었습니다.</p>
+<h3>합계를 1.1로 나누면 왜 딱 떨어지지 않나요?</h3>
+<p>합계가 11의 배수가 아니면 소수점이 생깁니다. 그래서 원 단위 미만 처리 방식을 골라야 하고, 고른 방식에 따라 공급가액과 부가세가 1원씩 달라집니다.</p>
+<h3>계산 결과를 세금계산서에 그대로 옮겨도 되나요?</h3>
+<p>금액을 확인하는 용도로는 쓸 수 있습니다. 다만 세금계산서는 국세청 홈택스 등에서 따로 발급해야 합니다. 법인사업자와 일정 규모 이상 개인사업자는 전자세금계산서 발급 의무가 있습니다. 옮겨 적기 전에 원 단위 미만 처리가 거래처 기준과 같은지 확인하세요.</p>
+<h3>입력한 금액이 어딘가에 남나요?</h3>
+<p>입력값은 서버로 전송되지 않습니다. 결과를 남겨야 한다면 인쇄 기능을 쓰세요.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.law.go.kr/법령/부가가치세법" rel="nofollow noopener" target="_blank">부가가치세법 (국가법령정보센터)</a> - 세율, 세금계산서와 면세</li>
+<li><a href="https://www.hometax.go.kr" rel="nofollow noopener" target="_blank">국세청 홈택스</a> - 전자세금계산서·계산서 발급</li>
+<li><a href="https://www.nts.go.kr" rel="nofollow noopener" target="_blank">국세청</a> - 부가가치세 신고 안내</li>
+</ul>
+<p>이 페이지는 일반적인 계산 방법을 안내합니다. 어떤 거래가 면세인지, 신고를 어떻게 할지처럼 개별 판단이 필요한 내용은 세무 전문가나 국세청 국세상담센터(국번 없이 126)에서 확인하세요.</p>
+
+<h2>함께 보면 좋은 서식과 가이드</h2>
+<div class="related">
+<a href="/forms/quote/">견적서<small>공급가액과 부가세를 나눠 제시할 때</small></a>
+<a href="/forms/statement/">거래명세서<small>납품 금액을 품목별로 확인할 때</small></a>
+<a href="/guide/quote-vat/">견적서 부가세 표시법<small>포함·별도 표기로 생기는 다툼 막기</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "부가세 계산기",
+  inputs: [["mode", "계산 방법", "select", "supply", [["supply", "공급가액을 넣고 합계 구하기"], ["total", "합계(부가세 포함)를 넣고 나누기"]]],
+           ["amount", "금액(원)", "number", "", null, "예: 1300000"],
+           ["round", "원 단위 미만 처리", "select", "round", [["round", "반올림"], ["floor", "버림"]]]],
+  compute: function (v, H) {
+    var a = H.num(v.amount); if (!a) return null;
+    var r = v.round === "floor" ? Math.floor : Math.round, sup, vat, tot;
+    if (v.mode === "supply") { sup = a; vat = r(a * 0.1); tot = sup + vat; }
+    else { tot = a; sup = r(a / 1.1); vat = tot - sup; }
+    return { rows: [["공급가액", H.won(sup)], ["부가세(10%)", H.won(vat)], ["합계", H.won(tot), "main"]],
+             note: v.mode === "total" ? "합계 ÷ 1.1 = 공급가액, 나머지가 부가세입니다." : "공급가액 × 10% = 부가세입니다." };
+  },
+  sample: { mode: "total", amount: "1430000" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>

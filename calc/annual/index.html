@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>연차 계산기, 입사일로 근속연수별 연차 일수 확인 | 아하서식</title>
+<meta name="description" content="입사일과 기준일을 넣으면 근속기간, 올해 연차, 다음 입사기념일 연차를 바로 보여 줍니다. 1년 미만·3년 이상 규칙과 회계연도 기준 차이도 정리했습니다.">
+<meta name="google-adsense-account" content="ca-pub-2087628123837294">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087628123837294" crossorigin="anonymous"></script>
+<link rel="canonical" href="https://ahainfoblog.com/calc/annual/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="연차 계산기, 입사일로 근속연수별 연차 일수 확인 | 아하서식">
+<meta property="og:description" content="입사일과 기준일을 넣으면 근속기간, 올해 연차, 다음 입사기념일 연차를 바로 보여 줍니다. 1년 미만·3년 이상 규칙과 회계연도 기준 차이도 정리했습니다.">
+<meta property="og:url" content="https://ahainfoblog.com/calc/annual/">
+<meta property="og:site_name" content="아하서식">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "headline": "연차 계산기, 입사일로 연차 일수 확인", "description": "입사일과 기준일을 넣으면 근속기간, 올해 연차, 다음 입사기념일 연차를 바로 보여 줍니다. 1년 미만·3년 이상 규칙과 회계연도 기준 차이도 정리했습니다.", "dateModified": "2026-11-23", "author": {"@type": "Organization", "name": "아하서식 편집팀"}, "publisher": {"@type": "Organization", "name": "아하서식"}, "mainEntityOfPage": "https://ahainfoblog.com/calc/annual/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "기준일에는 어떤 날짜를 넣어야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "보통은 오늘 날짜를 넣습니다. 내년 휴가 계획을 세울 때는 미래 날짜를, 퇴사 예정이라면 마지막 근무일 무렵 날짜를 넣어 그 시점의 근속기간과 연차를 볼 수 있습니다."}}, {"@type": "Question", "name": "근속 2년이 됐는데 연차가 왜 늘지 않나요?", "acceptedAnswer": {"@type": "Answer", "text": "가산은 근속 3년부터 시작하고, 이후에도 2년마다 1일씩만 늘기 때문입니다. 근속 1년과 2년은 모두 15일입니다."}}, {"@type": "Question", "name": "연차를 남기면 수당으로 받을 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "사용하지 못한 연차를 어떻게 처리하는지는 회사 규정과 개별 사정에 따라 판단이 달라집니다. 이 계산기는 일수만 계산하며 금액은 계산하지 않습니다."}}, {"@type": "Question", "name": "입력한 날짜가 어디에 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "입력값은 서버로 전송되지 않고 이 화면에서만 계산됩니다."}}]}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/">아하<span>서식</span></a>
+  <nav><a href="/forms/">업무 서식</a><a href="/calc/">계산기</a><a href="/guide/">실무 가이드</a><a href="/about/">소개</a></nav>
+</div></header>
+<main class="wrap">
+  <div class=""><div class="crumb"><a href="/">홈</a> › <a href="/calc/">계산기</a> › 연차 계산기</div></div>
+  <h1>연차 계산기, 입사일로 연차 일수 확인</h1>
+  <p class="lead">입사일과 기준일을 넣으면 근속기간, 올해 연차, 다음 입사기념일에 생기는 연차를 바로 계산합니다. 상시 5인 이상 사업장의 입사일 기준 계산입니다. 입력한 내용은 서버로 보내지 않고 이 브라우저 안에서만 처리합니다.</p>
+  <div class="meta">작성: 아하서식 편집팀 · 최종 검토: 2026년 11월 23일</div>
+  <section class="tool" id="tool"></section>
+  <article>
+<h2>이 계산기로 알 수 있는 것</h2>
+<p>연차 일수는 근속연수에 따라 달라지기 때문에 "올해 내 연차가 왜 16일인지", "내년엔 며칠인지"가 헷갈리기 쉽습니다. 이 계산기는 입사일과 기준일 두 날짜만으로 다음 세 가지를 보여 줍니다.</p>
+<ul>
+<li><b>근속기간</b>: 입사일부터 기준일까지 몇 년 몇 개월 일했는지</li>
+<li><b>올해 연차</b>: 가장 최근 입사기념일에 생긴 연차 일수와 그 해가 근속 몇 년 차인지</li>
+<li><b>다음 입사기념일부터</b>: 다음 입사기념일에 새로 생기는 연차 일수</li>
+</ul>
+<p>날짜를 바꾸면 결과가 바로 다시 계산됩니다. 처음이라면 '예시 값 넣기' 버튼으로 결과 모양을 먼저 확인해 보세요. 결과 화면은 인쇄해서 휴가 계획이나 면담 자료로 쓸 수 있습니다.</p>
+
+<h2>연차 일수를 정하는 세 가지 규칙</h2>
+<p>근로기준법의 연차 규칙은 근속기간을 세 구간으로 나눠 보면 이해하기 쉽습니다. 모두 상시 5인 이상 사업장 기준입니다.</p>
+<table>
+<tr><th>구간</th><th>규칙</th><th>일수</th></tr>
+<tr><td>입사 후 1년 미만</td><td>1개월 개근할 때마다 1일</td><td>최대 11일</td></tr>
+<tr><td>1년 이상 ~ 3년 미만</td><td>1년간 80% 이상 출근하면</td><td>15일</td></tr>
+<tr><td>3년 이상</td><td>최초 1년을 넘는 근속 2년마다 1일 가산</td><td>최대 25일</td></tr>
+</table>
+<p>3년 이상 구간을 식으로 쓰면 다음과 같습니다. n은 입사기념일 기준으로 다 채운 근속연수입니다.</p>
+<p><b>연차 = 15일 + (n − 1) ÷ 2의 몫, 단 25일을 넘지 않음</b></p>
+<p>예를 들어 근속 3년이면 (3−1)÷2의 몫이 1이라 16일이고, 근속 4년도 몫이 1이라 16일입니다. 연차가 해마다 늘지 않고 2년에 한 번씩 늘어나는 이유입니다.</p>
+<table>
+<tr><th>근속연수</th><th>1·2년</th><th>3·4년</th><th>5·6년</th><th>7·8년</th><th>9·10년</th><th>11·12년</th><th>21년 이상</th></tr>
+<tr><td>연차 일수</td><td>15일</td><td>16일</td><td>17일</td><td>18일</td><td>19일</td><td>20일</td><td>25일</td></tr>
+</table>
+<p>1년 이상 일했더라도 그 1년의 출근율이 80%에 못 미치면 15일이 아니라 1개월 개근마다 1일씩 생깁니다. 이 계산기는 80% 이상 출근했다고 가정하고 계산합니다.</p>
+
+<h2>날짜를 넣어 본 계산 예시</h2>
+<h3>예시 1. 근속 3년을 막 넘긴 경우</h3>
+<p>디자인 회사 직원 윤서진 씨는 2023년 4월 3일에 입사했습니다. 기준일을 2026년 11월 23일로 넣어 보겠습니다.</p>
+<table>
+<tr><th>항목</th><th>계산</th><th>결과</th></tr>
+<tr><td>근속기간</td><td>2023.4.3 ~ 2026.11.23</td><td>약 3년 7개월</td></tr>
+<tr><td>올해 연차</td><td>2026.4.3에 근속 3년 완성, 15 + (3−1)÷2의 몫 1</td><td>16일</td></tr>
+<tr><td>다음 입사기념일부터</td><td>2027.4.3에 근속 4년, 15 + (4−1)÷2의 몫 1</td><td>16일</td></tr>
+</table>
+<p>다음 해에도 16일 그대로입니다. 17일로 늘어나는 때는 근속 5년이 되는 2028년 4월 3일입니다.</p>
+
+<h3>예시 2. 입사 1년이 안 된 신입</h3>
+<p>물류센터 사무직 강도윤 씨는 2026년 6월 15일에 입사했습니다. 같은 기준일 2026년 11월 23일로 보면 근속기간은 5개월 8일입니다.</p>
+<table>
+<tr><th>개근 기간</th><th>생기는 연차</th></tr>
+<tr><td>6.15 ~ 7.14</td><td>1일</td></tr>
+<tr><td>7.15 ~ 8.14</td><td>1일</td></tr>
+<tr><td>8.15 ~ 9.14</td><td>1일</td></tr>
+<tr><td>9.15 ~ 10.14</td><td>1일</td></tr>
+<tr><td>10.15 ~ 11.14</td><td>1일</td></tr>
+<tr><td>합계(매달 개근 가정)</td><td>5일</td></tr>
+</table>
+<p>11월 15일에 시작된 달은 아직 끝나지 않았으므로 세지 않습니다. 이 방식으로 1년을 채우면 최대 11일이고, 2027년 6월 15일 첫 입사기념일에 그 1년간 80% 이상 출근했다면 15일이 새로 생깁니다.</p>
+
+<h3>예시 3. 25일 상한에 닿은 장기 근속자</h3>
+<p>2004년 9월 1일에 입사한 생산관리팀장 백정호 씨는 2026년 9월 1일에 근속 22년이 됐습니다. 식대로 계산하면 15 + (22−1)÷2의 몫 10 = 25일입니다. 근속 21년에 이미 25일에 닿았으므로 이후에는 근속이 늘어도 25일로 유지됩니다.</p>
+
+<h2>결과가 회사 안내와 다를 때 확인할 점</h2>
+<h3>회사가 1월 1일 기준으로 연차를 주는 경우</h3>
+<p>이 계산기는 직원마다 입사기념일에 연차가 생기는 입사일 기준으로 계산합니다. 관리 편의를 위해 모든 직원의 연차를 매년 1월 1일에 한꺼번에 부여하는 회사도 흔합니다. 이런 회사에서는 입사한 해와 그다음 해의 일수를 회사 규정에 따라 계산하므로, 같은 날짜로 비교해도 계산기 결과와 다를 수 있습니다. 취업규칙이나 인사 담당자의 안내를 함께 확인하세요.</p>
+<h3>상시 근로자가 4인 이하인 사업장</h3>
+<p>법정 연차 규칙은 상시 5인 이상 사업장에 적용됩니다. 4인 이하 사업장이라면 이 계산 결과를 그대로 적용할 수 없고, 근로계약서나 회사 규정에서 정한 휴가가 있으면 그 내용을 따릅니다.</p>
+<h3>출근율이 80%에 못 미친 해가 있는 경우</h3>
+<p>앞에서 설명했듯 그 해에는 15일이 아닌 1개월 개근 단위로 연차가 생깁니다. 계산기는 출근율을 입력받지 않으므로 이런 해는 따로 따져 봐야 합니다.</p>
+
+<h2>자주 묻는 질문</h2>
+<h3>기준일에는 어떤 날짜를 넣어야 하나요?</h3>
+<p>보통은 오늘 날짜를 넣습니다. 내년 휴가 계획을 세울 때는 미래 날짜를, 퇴사 예정이라면 마지막 근무일 무렵 날짜를 넣어 그 시점의 근속기간과 연차를 볼 수 있습니다.</p>
+<h3>근속 2년이 됐는데 연차가 왜 늘지 않나요?</h3>
+<p>가산은 근속 3년부터 시작하고, 이후에도 2년마다 1일씩만 늘기 때문입니다. 근속 1년과 2년은 모두 15일입니다.</p>
+<h3>연차를 남기면 수당으로 받을 수 있나요?</h3>
+<p>사용하지 못한 연차를 어떻게 처리하는지는 회사 규정과 개별 사정에 따라 판단이 달라집니다. 이 계산기는 일수만 계산하며 금액은 계산하지 않습니다.</p>
+<h3>입력한 날짜가 어디에 저장되나요?</h3>
+<p>입력값은 서버로 전송되지 않고 이 화면에서만 계산됩니다.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://www.law.go.kr/법령/근로기준법" rel="nofollow noopener" target="_blank">근로기준법 (국가법령정보센터)</a> - 연차유급휴가 발생 기준</li>
+<li><a href="https://www.moel.go.kr" rel="nofollow noopener" target="_blank">고용노동부</a> - 근로시간·휴가 관련 안내</li>
+</ul>
+<p>이 페이지는 일반적인 기준에 따른 계산입니다. 출근율, 회계연도 운영 방식, 미사용 연차 처리처럼 개별 사정이 걸린 문제는 고용노동부 고객상담센터(국번 없이 1350)에서 확인할 수 있습니다.</p>
+
+<h2>연차와 함께 보면 좋은 페이지</h2>
+<div class="related">
+<a href="/guide/annual-leave/">연차 발생 기준 총정리<small>출근율과 회계연도 기준까지 자세히</small></a>
+<a href="/forms/leave/">휴가신청서<small>계산한 연차를 신청할 때</small></a>
+<a href="/calc/severance/">퇴직금 계산기<small>퇴사 전 근속기간과 함께 확인</small></a>
+</div>
+<div class="author"><div class="av">아하</div><div><b>아하서식 편집팀</b><br>회계·총무 실무에서 자주 쓰는 서식과 계산 기준을 정리하고, 세법·노동법 개정 사항을 확인해 내용을 갱신합니다. 내용에 오류가 있으면 <a href="/contact/">문의하기</a>로 알려 주세요.</div></div>
+  </article>
+</main>
+<footer><div class="wrap">
+  <a href="/about/">소개</a><a href="/contact/">문의하기</a><a href="/privacy/">개인정보처리방침</a><a href="/terms/">이용약관</a><a href="/guide/">실무 가이드</a>
+  <p>© 2026 아하서식. 입력한 정보는 서버로 전송되지 않습니다. 이 사이트는 세무·노무·법률 자문을 제공하지 않습니다.</p>
+</div></footer>
+<script>window.CALC = {
+  name: "연차 계산기",
+  inputs: [["join", "입사일", "date", ""], ["base", "기준일", "date", "today"]],
+  compute: function (v, H) {
+    var s = H.date(v.join), b = H.date(v.base); if (!s || !b || b < s) return null;
+    var y = b.getFullYear() - s.getFullYear(), m = b.getMonth() - s.getMonth(), d = b.getDate() - s.getDate();
+    if (d < 0) m--; if (m < 0) { y--; m += 12; }
+    var months = y * 12 + m, rows = [["근속기간", y + "년 " + m + "개월"]];
+    if (y < 1) {
+      rows.push(["지금까지 생긴 연차(1년 미만)", Math.min(months, 11) + "일", "main"]);
+      return { rows: rows, note: "1년 미만 근로자는 1개월 개근할 때마다 1일씩, 최대 11일이 생깁니다.\n입사 1년이 되는 날(80% 이상 출근 시) 15일이 새로 생깁니다." };
+    }
+    var days = Math.min(15 + Math.floor((y - 1) / 2), 25);
+    rows.push(["올해(근속 " + y + "년 차 시작) 연차", days + "일", "main"]);
+    var nx = Math.min(15 + Math.floor(y / 2), 25);
+    rows.push(["다음 입사기념일부터", nx + "일"]);
+    return { rows: rows, note: "1년간 80% 이상 출근하면 15일, 3년 이상 근속하면 2년마다 1일씩 늘어 최대 25일입니다.\n입사일 기준으로 계산했습니다. 회계연도(1월 1일) 기준으로 운영하는 회사는 일수가 다를 수 있습니다. 상시 5인 이상 사업장 기준입니다." };
+  },
+  sample: { join: "2021-07-01" }
+};
+</script>
+<script src="/assets/calc.js"></script>
+</body>
+</html>
